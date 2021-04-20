@@ -1,0 +1,39 @@
+<div class="mat-dialog-containerThree" >
+      
+    <div class="row modal-header"> 
+       <h5 class="modal-title" id="exampleModalCenterTitle">Command Settings for smart meter</h5>
+        <button (click)="onNoClick()" >close</button>
+       
+     </div>
+
+
+         
+           
+
+           <div class="row">
+               
+            <div class="col-sm-3">
+             <p>Set Address</p> 
+
+            </div>
+            <div class="col-sm-6">
+                
+                  <p>
+                    <mat-form-field appearance="outline">
+                      <input matInput  [(ngModel)]="setaddress" name="setaddress">
+                    </mat-form-field>
+                  </p>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-primary" (click) = "sendMessage('setaddress',setaddress,data.id)" >Submit</button>
+            </div>
+
+  
+             
+             
+           </div>
+
+          
+           </div>
+  
+ 

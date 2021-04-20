@@ -1,0 +1,36 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+
+
+  .containt{
+    margin: 1%;
+    width: 100%;
+}
+
+.sub-heading{
+    color:#022656;
+}
+
+.main{
+    background: white;
+}
+.lclass{
+    margin-bottom: 2%;
+    padding: 0%;
+    border: 1px solid;
+    border-color: #d6d0cb;
+}
+.rowcls{
+  width: 100%;
+}

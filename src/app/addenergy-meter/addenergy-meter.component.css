@@ -1,0 +1,60 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+
+
+.containt{
+  margin: 1%;
+  width: 100%;
+}
+
+.sub-heading{
+  color:#022656;
+}
+
+.main{
+  background: white;
+}
+
+
+.example-small-box, .example-large-box {
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 16px;
+padding: 16px;
+border-radius: 8px;
+}
+
+.example-small-box {
+width: 97%;
+}
+
+.example-large-box {
+width: 97%;
+}
+
+
+.row{
+  width: 100%; 
+}
+
+.example-radio-group {
+display: flex;
+flex-direction: column;
+margin: 15px 0;
+}
+
+.example-radio-button {
+margin: 5px;
+}

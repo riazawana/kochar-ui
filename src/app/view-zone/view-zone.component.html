@@ -1,0 +1,50 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+       
+            <h3>Zone Information Details</h3>
+            <hr>
+         </div>
+  
+         <div class="form_holder">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="font-size: 80%;">
+                        <br>
+                       
+                   
+                         <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Zone Name</mat-label>
+                              <input matInput placeholder="Zone Name" [disabled]="isDisabled"  [(ngModel)]="name" name="name">
+                              <mat-hint>Zone Name</mat-hint>
+                            </mat-form-field>
+                          </p>
+
+                          <p>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Business User</mat-label>
+                                <mat-select placeholder="User" [disabled]="isDisabled" [(ngModel)]="user_id" name="user_id">
+                                  <mat-option *ngFor="let u of business_user"  value="{{u._id}}" >{{u.name}}</mat-option>
+                                </mat-select>
+                              <mat-hint>User</mat-hint>
+                            </mat-form-field>
+                          </p>
+                     
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+         </div>
+      
+           
+       
+           
+       
+    </div>
+    
+  </div>
+  
+  
+  
+  

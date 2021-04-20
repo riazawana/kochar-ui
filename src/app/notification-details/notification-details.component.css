@@ -1,0 +1,32 @@
+.divclass{
+    background: white;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.priorityclass{
+    background: red;
+    color: white;
+}
+.fieldclass{
+    background: white;
+}
+.porttime{
+    color: red;
+    font-size: small;
+}
+.hrclass{
+    margin-top: -1rem;
+}
+.notictgry{
+    font-size: small;
+    margin-bottom: 2px;
+}
+.hr{
+    margin-top: 0rem;
+}
+.btnclass{
+    font-size: small;
+}
+.mgnt{
+    background: white;
+}

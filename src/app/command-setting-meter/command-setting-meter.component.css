@@ -1,0 +1,33 @@
+.containt{
+    margin: 1%;
+    width: 100%;
+}
+
+.sub-heading{
+    color:#022656;
+}
+
+.form_holder{
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.clear{
+    clear: both;
+}
+
+.profile_heading{
+    color: #ccc;
+}
+
+.form_holder{
+    font-size: 90%;
+    color: gray;
+}
+
+span{
+    padding: 1%;
+}

@@ -1,0 +1,107 @@
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="background-color: #022656;color: white;    font-size: 13px;
+" id="mySidebar">
+<div>
+  <img src="assets/company_logo/logo.png" (click)="redirect()" style="width: 100%;height: 38px;">
+</div>
+    <div *ngFor="let s of sidebar"> 
+
+          <div *ngIf="s.submodulename.length != 0;else elseBlock">
+                <ul class="list-unstyled components">   
+                  <li>
+                      <a href="#{{s.modulename.replace(' ','')}}"  data-toggle="collapse" aria-expanded="false" class="w3-bar-item w3-button">{{s.modulename}} 
+                      <fa-icon [icon]="faCaretDown" style="float: right;"></fa-icon>
+                      </a>
+                      <ul class="collapse list-unstyled" id="{{s.modulename.replace(' ','')}}" style="margin-left: 10%;">
+                          <li *ngFor="let ss of s.submodulename">
+                              <a  (click)="next('/kochar/'+s.modulename+'/'+ss.submodule_name)" class="w3-bar-item w3-button">{{ss.submodule_name}}</a>
+                          </li>
+                      </ul>
+                  </li>
+                </ul>
+          </div>
+        
+          <ng-template #elseBlock>
+            <a  (click)="next('/kochar/'+s.modulename)"  class="w3-bar-item w3-button">{{s.modulename}}</a>
+          </ng-template>
+
+    </div>
+      
+</div>
+
+
+
+
+
+  
+<div id="main">
+        <div class="w3-teal">
+            <div class="row" style="width: 100%;margin: 0%;">
+              <div class="col-sm-2">
+                <button id="openNav" class="w3-button w3-teal w3-xlarge" (click)="w3_open()">&#9776;</button>
+                <button id="closeNav" class="w3-button w3-teal w3-xlarge" (click)="w3_close()" style="display: none;">&#9776;</button>     
+              </div> 
+              
+              <div class="col-sm-7"></div>
+             
+              <div class="col-sm-1">
+                  <span matBadge="{{notificationcount}}" matBadgeSize="small" style="position: absolute;margin-top: 10%;" (click)="goto_notification()"><i class="fa fa-bell-o bellcls mt-2"></i></span>
+              </div>
+
+              <div class="col-sm-2">
+                <button id="logout" class="w3-button w3-teal w3-xlarge" (click)="logout()" >logout 
+                  <fa-icon [icon]="faSignOutAlt"></fa-icon>
+                </button> 
+
+              </div>
+
+            </div>
+        </div>
+
+        <!-- <button (click)="sendMessage()">SOC</button> -->
+
+      <!-- <button (click)="notifyMe()">notify</button> -->
+
+      <div class="w3-container">
+        
+              <router-outlet></router-outlet>
+
+              <div style="width:100%;text-align: center;">
+                <span style="color: gray;font-size: 90%;">Copyright © 2021 KocharTech. All Right Reserved</span>
+              </div>
+
+        </div>
+</div>   
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<simple-notifications  ></simple-notifications>

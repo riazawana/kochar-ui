@@ -1,0 +1,58 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+       
+            <h3>View Feature</h3>
+            <hr>
+         </div>
+  
+         
+         <div class="form_holder">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="font-size: 80%;">
+                        <br>
+                        <form >
+                        <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Name</mat-label>
+                              <input matInput [(ngModel)]="name" name="name" placeholder="Name"  [disabled]="true">
+                             
+                            
+                              <mat-hint>Name</mat-hint>
+                            </mat-form-field>
+                          </p>
+                                     
+                        
+  
+                          <p>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Type</mat-label>
+                                <mat-select placeholder="type"  [(ngModel)]="type" name="type"[disabled]="true">
+                                  <mat-option  value="button" >Button</mat-option>
+                                  <mat-option  value="module" >Module</mat-option>
+                                </mat-select>
+                             
+                              <mat-hint>Type</mat-hint>
+                            </mat-form-field>
+                          </p>
+   
+  
+                        </form>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+         </div>
+      
+           
+       
+           
+       
+    </div>
+    
+  </div>
+  
+  
+  
+  

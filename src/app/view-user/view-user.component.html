@@ -1,0 +1,131 @@
+
+<div class="row">
+  <div class="containt">
+      <div class="sub-heading">
+     
+          <h3>User Information Detail</h3>
+          <hr>
+       </div>
+
+       <div class="form_holder">
+          <div class="row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-8" style="font-size: 80%;">
+                      <br>
+                     
+                 
+                      <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input matInput [(ngModel)]="name" [disabled]="isDisabled" name="name" placeholder="Name">
+                            <mat-hint>User Name</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                       
+          
+                        <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Mobile</mat-label>
+                            <input matInput [(ngModel)]="mobile" [disabled]="isDisabled" name="mobile" placeholder="Number">
+                            <mat-hint>User Mobile</mat-hint>
+                          </mat-form-field>
+                        </p>
+          
+          
+                        <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput [(ngModel)]="email" [disabled]="isDisabled" name="email" placeholder="Email">
+                            <mat-hint>User Email</mat-hint>
+                          </mat-form-field>
+                        </p>
+          
+          
+                        <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Address</mat-label>
+                            <input matInput [(ngModel)]="address" [disabled]="isDisabled" name="address" placeholder="Address">
+                            <mat-hint>User Address</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                        <p>
+                          <mat-form-field appearance="outline">
+                              <mat-label>Country</mat-label>
+                              <mat-select placeholder="Country" [(ngModel)]="country_id" [disabled]="isDisabled" name="country_id">
+                                  <mat-option *ngFor="let c of country_list" value="{{c.country_id}}" (click)="getstate(c.country_id)">{{c.name}}</mat-option>
+                              </mat-select>
+                            <mat-hint>Country</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                        <p>
+                          <mat-form-field appearance="outline">
+                              <mat-label>State</mat-label>
+                              <mat-select placeholder="State"  [(ngModel)]="state_id" [disabled]="isDisabled" name="state_id">
+                                <mat-option *ngFor="let s of state_list" value="{{s.state_id}}" (click)="getcity(s.state_id)">{{s.name}}</mat-option>
+                              </mat-select>
+                            <mat-hint>State</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                        <p>
+                          <mat-form-field appearance="outline">
+                              <mat-label>City</mat-label>
+                              <mat-select placeholder="City" [(ngModel)]="city_id" [disabled]="isDisabled" name="city_id">
+                                <mat-option *ngFor="let ci of city_list" value="{{ci.city_id}}" (click)="getpin(ci.state_id,ci.city_id)">{{ci.name}}</mat-option>
+                              </mat-select>
+                            <mat-hint>City</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                        <p>
+                          <mat-form-field appearance="outline">
+                              <mat-label>Zipcode</mat-label>
+                              <mat-select placeholder="Zipcode" [(ngModel)]="pincode_id" [disabled]="isDisabled" name="pincode_id">
+                                <mat-option *ngFor="let p of pin_list" value="{{p.pincode_id}}" >{{p.pincode}}</mat-option>
+                              </mat-select>
+                            <mat-hint>Zipcode</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                        <p>
+                          <mat-form-field appearance="outline">
+                              <mat-label>Role</mat-label>
+                              <mat-select placeholder="Role" [(ngModel)]="role_id" [disabled]="isDisabled" name="role_id" >
+                                <mat-option *ngFor="let r of roles" value="{{r.id}}" (click)="onchange(role_id)">{{r.name}}</mat-option>
+                              </mat-select>
+                            <mat-hint>Role</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+
+                        <p>
+                      
+                          <mat-form-field appearance="outline" id="zone">
+                            <mat-label>Zones</mat-label>
+                            <mat-select placeholder="Zone" [(ngModel)]="zone_id" [disabled]="isDisabled" name="zone_id" multiple>
+                            
+                              <mat-option *ngFor="let z of zones" value="{{z.zone_name}}" >{{z.zone_name}}</mat-option>
+
+                            </mat-select>
+                          </mat-form-field>
+                        </p>
+
+                   
+              </div>
+              <div class="col-sm-2"></div>
+          </div>
+       </div>
+    
+         
+     
+         
+     
+  </div>
+  
+</div>
+
+
+

@@ -1,0 +1,137 @@
+<div class="mat-dialog-containerThree" style="padding:0px;">
+      
+    <div class="row modal-header"> 
+       <h5 class="modal-title" id="exampleModalCenterTitle">Command Settings for Secondry gateway</h5>
+        <button (click)="onNoClick()" >close</button>
+       
+     </div>
+
+
+           <div class="row">
+               
+            <div class="col-sm-3">
+             <p>Ping Interval</p> 
+
+            </div>
+            <div class="col-sm-6">
+                    <p>
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="For eg: 5, 10 ..." [(ngModel)]="pinginterval1" name="pinginterval1">
+                    </mat-form-field>
+                    </p>
+                  <p>
+                    <mat-form-field appearance="outline">
+                      <input matInput  [(ngModel)]="pinginterval2" name="pinginterval2">
+                    </mat-form-field>
+                  </p>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-primary" (click) = "sendMessage('pinginterval',pinginterval1,data.id)" >Set</button>
+                <button type="button" class="btn btn-primary" (click) = "get('pinginterval',data.id)" >Get</button>
+
+            </div>
+
+  
+             
+             
+           </div>
+
+           <div class="row">
+               
+            <div class="col-sm-3">
+             <p>Ping URL</p> 
+
+            </div>
+            <div class="col-sm-6">
+                <p>
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="For eg: http://www.example.com" [(ngModel)]="pingurl1" name="pingurl1">
+                    </mat-form-field>
+                  </p>
+                  <p>
+                    <mat-form-field appearance="outline">
+                      <input matInput  [(ngModel)]="pingurl2" name="pingurl2">
+                    </mat-form-field>
+                  </p>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-primary" (click) = "sendMessage('pingurl',pingurl1,data.id)" >Set</button>
+                <button type="button" class="btn btn-primary" (click) = "get('pingurl',data.id)" >Get</button>
+
+            </div>
+
+  
+             
+             
+           </div>
+
+           <div class="row">
+               
+            <div class="col-sm-3">
+             <p>Enable APM</p> 
+
+            </div>
+            <div class="col-sm-6">
+                <button type="button" class="btn btn-primary" (click) = "sendMessage('enableapm','none',data.id)" >Submit</button>
+            </div>
+            <div class="col-sm-3">
+            </div>
+
+  
+             
+             
+           </div>
+
+           <div class="row">
+               
+            <div class="col-sm-3">
+             <p>Relay Status</p> 
+
+            </div>
+            <div class="col-sm-6">
+                
+                  <p>
+                    <mat-form-field appearance="outline">
+                      <input matInput  [(ngModel)]="relaystatus" name="relaystatus">
+                    </mat-form-field>
+                  </p>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-primary" (click) = "get('relaystatus',data.id)" >Get</button>
+            </div>
+
+  
+             
+             
+           </div>
+
+           <div class="row">
+               
+            <div class="col-sm-3">
+             <p>Firmware Virsion</p> 
+
+            </div>
+            <div class="col-sm-6">
+                <p>
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="For eg: v1.2" [(ngModel)]="firmwarevirsion1" name="firmwarevirsion1">
+                    </mat-form-field>
+                  </p>
+                  <p>
+                    <mat-form-field appearance="outline">
+                      <input matInput  [(ngModel)]="firmwarevirsion2" name="firmwarevirsion2">
+                    </mat-form-field>
+                  </p>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-primary" (click) = "sendMessage('firmwarevirsion',firmwarevirsion1,data.id)" >Set</button>
+                <button type="button" class="btn btn-primary" (click) = "get('firmwarevirsion',data.id)" >Get</button>
+
+            </div>
+
+  
+             
+             </div>
+           </div>
+  
+ 

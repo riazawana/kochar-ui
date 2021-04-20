@@ -1,0 +1,57 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+       
+            <h3>View Role Information</h3>
+            <hr>
+         </div>
+  
+         <div class="form_holder">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="font-size: 80%;">
+                        <br>
+                       
+                   
+                        <p>
+                            <mat-form-field appearance="outline" *ngIf="data != undefined">
+                              <mat-label>Role Name</mat-label>
+                              <input matInput placeholder="Role Name" [(ngModel)]="name" name="name" [disabled]="!disable">
+                              <mat-hint>Role Name</mat-hint>
+                            </mat-form-field>
+                          </p>
+
+                            <p *ngFor="let da of featuresarr;">
+                              <mat-label>{{da.feature_name}}</mat-label>
+                            
+                              <mat-checkbox *ngIf="da.type != 'button'" class="example-margin" name="Add" [disabled]="!disable"  (change)="check('add',$event.checked,da.feature_name,da.type)"   [checked]="da.add">Add </mat-checkbox>
+                              <mat-checkbox *ngIf="da.type != 'button'" class="example-margin" name="View" [disabled]="!disable"  (change)="check('view',$event.checked,da.feature_name,da.type)" [checked]="da.view">View </mat-checkbox>
+                              <mat-checkbox *ngIf="da.type != 'button'" class="example-margin" name="Edit"  [disabled]="!disable" (change)="check('edit',$event.checked,da.feature_name,da.type)" [checked]="da.edit">Edit </mat-checkbox>
+                              <mat-checkbox *ngIf="da.type != 'button'" class="example-margin" name="Delete" [disabled]="!disable"  (change)="check('delete',$event.checked,da.feature_name,da.type)" [checked]="da.delete">Delete </mat-checkbox>
+                              <mat-checkbox *ngIf="da.type == 'button'" class="example-margin" name="Action"  [disabled]="!disable" (change)="check('action',$event.checked,da.feature_name,da.type)"[checked]="da.action">Action </mat-checkbox>
+
+                            </p>
+
+                         
+            
+                    
+                          
+                          <!-- <button type="button" class="btn btn-primary" *ngIf="disable == true" (click) = "update()" >Update</button> -->
+                    
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+         </div>
+      
+           
+       
+           
+       
+    </div>
+    
+  </div>
+  
+  
+  
+  

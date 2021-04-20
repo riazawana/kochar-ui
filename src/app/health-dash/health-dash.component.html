@@ -1,0 +1,82 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+
+            <h3>Health Dashoard</h3>
+            <hr>
+         </div>
+
+         
+  
+        <div class="main">
+
+            <div>
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Location</th>
+                      <th scope="col">Router</th>
+                      <th scope="col">Wired Controller</th>
+                      <th scope="col">Video Gateway</th>            
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let da of healthdata;let i = index;">
+                      <th scope="row">
+                         <span><b>{{da.location_name}}</b></span>
+                        <br>
+                        <span>{{da.zone_name}}</span>
+                        <br>
+                        <span>City : {{da.city}}, State:{{da.state}}</span>
+                      </th>
+                      <td>
+                          <div *ngFor="let r of da.routers;">
+                            <span *ngIf="r.is_online == false" class="reddot"></span>
+                            <span *ngIf="r.is_online == true" class="greendot"></span> 
+                     
+                              <span>{{r.mac_id}}</span>
+                                <br>
+                              <span (click)="detailsRouer(r.mac_id)"><b>Details</b></span>
+
+                          </div>
+                      </td>
+                      <td>
+                        <div *ngFor="let r of da.iot_gateways;">
+                            <span *ngIf="r.is_online == false" class="reddot"></span>
+                            <span *ngIf="r.is_online == true" class="greendot"></span> 
+                     
+                            <span>{{r.mac_id}}</span>
+                              <br>
+                              <span (click)="detailsIN(r.status,r.mode,r.keypad_status)"><b>Details</b></span>
+
+
+                        </div>
+                      </td>
+                      <td>
+                        <div *ngFor="let r of da.video_gateway;">
+                            <span *ngIf="r.is_online == false" class="reddot"></span>
+                            <span *ngIf="r.is_online == true" class="greendot"></span> 
+                     
+                            <span>{{r.mac_id}}</span>
+                              <br>
+                              <span (click)="detailsVideo(r.cameras)"><b>Details</b></span>
+
+
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          
+
+        </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  

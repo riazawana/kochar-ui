@@ -1,0 +1,95 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+         
+            <h3>Edit Router</h3>
+            <hr>
+         </div>
+  
+        <div class="main">
+            
+            <mat-tab-group dynamicHeight [selectedIndex]="selectedIndex" style="font-size: 85%;">
+          
+
+                <mat-tab label="Router Properties"  >
+                  <div class="example-large-box mat-elevation-z4">
+                       <div class="row" id="row">
+                        <div class="col-sm-12">
+
+                            <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Name</mat-label>
+                                  <input matInput [(ngModel)]="r_name" name="r_name" placeholder="Name">
+                                  <mat-hint>Name</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Mac Address</mat-label>
+                                  <input matInput [(ngModel)]="m_a" name="m_a" placeholder="(00:00:00:00:00:00)">
+                                  <mat-hint>Mac Address</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Mobile Number</mat-label>
+                                  <input matInput [(ngModel)]="mob" name="mob" placeholder="Mobile">
+                                  <mat-hint>Mobile Number</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>IMSI Number</mat-label>
+                                  <input matInput [(ngModel)]="imsi" name="imsi" placeholder="IMSI Number">
+                                  <mat-hint>IMSI Number</mat-hint>
+                                </mat-form-field>
+                              </p>
+
+                              <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Select SIM Operator</mat-label>
+                                    <mat-select placeholder="Type" [(ngModel)]="sim" name="sim">
+                                      <mat-option  value="No-Info" >NO Info</mat-option>
+                                      <mat-option  value="Airtel" >Airtel</mat-option>
+                                      <mat-option  value="Jio" >Jio</mat-option>
+                                      <mat-option  value="Idea/Vodafone" >Idea/Vodafone</mat-option>
+                                      <mat-option  value="BSNL" >BSNL</mat-option>
+
+                                    </mat-select>
+                                  <mat-hint>Select SIM Operator</mat-hint>
+                                </mat-form-field>
+                              </p>
+                              
+                        </div>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn btn-primary" (click)="submit()" style="float: right;">Next</button>
+                  <!-- <button type="button" class="btn btn-primary" (click)="previousStep(1)" style="float: right;">Previous</button> -->
+
+                </mat-tab>
+
+            
+                 
+
+              </mat-tab-group>
+
+           
+
+              
+          
+             
+              
+        </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  

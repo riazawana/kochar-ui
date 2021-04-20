@@ -1,0 +1,36 @@
+
+<div class="login">
+    <div class="container">
+       
+    <div class="row">
+        <div class="col-sm-4">
+        </div> 
+      
+        <div class="col-sm-4" style="margin-top: 10%;">
+            <div class="card" style="padding: 6%;">
+            <div>
+            <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+            <div class="form-group">
+                <input type="email"  placeholder="Enter Email" name="email" [(ngModel)]="email"  class="form-control" id="email" required>
+            </div>
+                <div class="form-group">
+                <input type="password" name="password" placeholder="Enter Password" [(ngModel)]="password"  class="form-control" id="password" required >
+                </div>
+                <div style="text-align:center;">
+                <br>
+                <button type="submit"   class="btn btn-primary nextbtn">Submit</button>
+                </div>
+            </form>
+            </div>
+            </div>
+        </div>
+  
+        <div class="col-sm-4">
+        </div>
+    
+  
+      </div>
+      </div>
+      </div>
+       
+  

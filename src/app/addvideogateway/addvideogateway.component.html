@@ -1,0 +1,139 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+         
+            <h3>Add Video Gateway</h3>
+            <hr>
+         </div>
+  
+        <div class="main">
+            
+            <mat-tab-group dynamicHeight [selectedIndex]="selectedIndex" style="font-size: 85%;">
+              
+
+                <mat-tab label="Select Brand"  >
+                  <div class="example-large-box mat-elevation-z4">
+                       <div class="row" id="row">
+                        <div class="col-sm-12">
+
+                            <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Select Brand</mat-label>
+                                    <mat-select placeholder="Type" [(ngModel)]="brand" name="brand">
+                                      <mat-option  value="Shinobi" >Shinobi</mat-option>
+                                      <mat-option  value="Hikvision" >Hikvision</mat-option>
+                                      <mat-option  value="Camera Manager" >Camera Manager</mat-option>
+                                      
+                                    </mat-select>
+                                  <mat-hint>Select Brand</mat-hint>
+                                </mat-form-field>
+                              </p>
+
+                              <p *ngIf="brand == 'Hikvision'">
+                                <mat-label>Category</mat-label>
+                                <mat-radio-group aria-label="Category" [(ngModel)]="cat" name="cat">
+                                    <mat-radio-button value="nvr"> NVR </mat-radio-button>
+                                    <mat-radio-button value="dvr"> DVR </mat-radio-button>
+                                    <mat-radio-button value="xvr"> XVR </mat-radio-button>
+                                  </mat-radio-group>
+                              </p>
+        
+                     
+
+                              <p *ngIf="brand != 'Camera Manager'">
+                                <mat-form-field appearance="outline">
+                                  <mat-label>HOST Address</mat-label>
+                                  <input matInput [(ngModel)]="host_add" name="host_add" placeholder="Eg:'https://example.com'">
+                                  <mat-hint>HOST Address</mat-hint>
+                                </mat-form-field>
+                              </p>
+
+                              <p *ngIf="brand == 'Hikvision'">
+                                <mat-form-field appearance="outline">
+                                  <mat-label>RTSP PORT</mat-label>
+                                  <input matInput [(ngModel)]="rtsp_port" name="rtsp_port" placeholder="554">
+                                  <mat-hint>RTSP PORT</mat-hint>
+                                </mat-form-field>
+                              </p>
+
+                              <p *ngIf="brand == 'Hikvision'">
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Mac ID</mat-label>
+                                  <input matInput [(ngModel)]="mac_id" name="mac_id" placeholder="00:00:00:00:00:00">
+                                  <mat-hint>Mac ID</mat-hint>
+                                </mat-form-field>
+                              </p>
+
+                              <p *ngIf="(brand == 'Hikvision')&&((cat == 'xvr')||(cat == 'dvr'))">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>No of analog port</mat-label>
+                                    <mat-select placeholder="analog_ports_count" [(ngModel)]="analog_ports_count" name="analog_ports_count">
+                                      <mat-option  value="4" >4 Ports</mat-option>
+                                      <mat-option  value="8" >8 Ports</mat-option>
+                                      <mat-option  value="16" >16 Ports</mat-option>
+                                      <mat-option  value="32" >32 Ports</mat-option>
+
+                                      
+                                    </mat-select>
+                                  <mat-hint>No of analog port</mat-hint>
+                                </mat-form-field>
+                              </p>
+
+
+
+                            <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Name</mat-label>
+                                  <input matInput [(ngModel)]="name" name="name" placeholder="Name">
+                                  <mat-hint>Name</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>User Name</mat-label>
+                                  <input matInput [(ngModel)]="username" name="username" placeholder="Username">
+                                  <mat-hint>User Name</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Password</mat-label>
+                                  <input matInput [(ngModel)]="password" name="password" placeholder="Password">
+                                  <mat-hint>Password</mat-hint>
+                                </mat-form-field>
+                              </p>
+
+                            
+                              
+                        </div>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn btn-primary" (click)="submit()" style="float: right;">Submit</button>
+                  <!-- <button type="button" class="btn btn-primary" (click)="previousStep()" style="float: right;">Previous</button> -->
+
+                </mat-tab>
+
+            
+
+              </mat-tab-group>
+
+           
+
+              
+                
+
+             
+              
+        </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  

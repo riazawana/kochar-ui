@@ -1,0 +1,188 @@
+
+<div class="row">
+  <div class="containt">
+      <div class="sub-heading">
+     
+          <h3>Update User Information</h3>
+          <hr>
+       </div>
+
+       <div class="form_holder">
+          <div class="row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-8" style="font-size: 80%;">
+                      <br>
+                  
+                   <form  [formGroup]="edituserformGroup">
+                      <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input matInput [(ngModel)]="name" name="name" placeholder="Name" required formControlName="name">
+                            <mat-error *ngIf="edituserformGroup.get('name').hasError('required')">
+                              User Name is Required!
+                            </mat-error>
+                            <mat-error *ngIf="edituserformGroup.get('name').hasError('minlength')">
+                             User Name should be atleast 4 characters long!
+                            </mat-error>
+                            <mat-hint>User Name</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                       
+          
+                        <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Mobile</mat-label>
+                            <input matInput [(ngModel)]="mobile" name="mobile" placeholder="Number" maxLength="10" (keypress)="keyPress($event)" required="true" formControlName="mobile">
+                            <mat-error *ngIf="edituserformGroup.get('mobile').hasError('required')">
+                              Mobile is Required!
+                            </mat-error>
+                            <mat-error *ngIf="edituserformGroup.get('mobile').hasError('minlength')">
+                              Mobile should be atleast 10 numbers!
+                            </mat-error> 
+                            <mat-error *ngIf="edituserformGroup.get('mobile').hasError('maxlength')">
+                              Mobile should be max 10 numbers!
+                            </mat-error> 
+                            <mat-error *ngIf="edituserformGroup.get('mobile').hasError('pattern')">
+                              Mobile should be only Number!
+                            </mat-error>
+                            <mat-hint>User Mobile</mat-hint>
+                          </mat-form-field>
+                        </p>
+          
+
+                        
+          
+                        <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput [(ngModel)]="email" name="email" placeholder="Email" required formControlName="email">
+                            <mat-error *ngIf="edituserformGroup.get('email').hasError('required')">
+                              Email is Required!
+                            </mat-error>
+                            <mat-error *ngIf="edituserformGroup.get('email').hasError('minlength')">
+                              User Email should be atleast 4 characters long!
+                            </mat-error> 
+                            <mat-hint>User Email</mat-hint>
+                          </mat-form-field>
+                        </p>
+          
+          
+                        <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Address</mat-label>
+                            <input matInput [(ngModel)]="address" name="address" placeholder="Address" required formControlName="address">
+                            <mat-error *ngIf="edituserformGroup.get('address').hasError('required')">
+                              Address is Required!
+                            </mat-error>
+                            <mat-error *ngIf="edituserformGroup.get('address').hasError('minlength')">
+                              User Address should be atleast 4 characters long!
+                            </mat-error> 
+                            <mat-hint>User Address</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                        <p>
+                          <mat-form-field appearance="outline">
+                              <mat-label>Country</mat-label>
+                              <mat-select placeholder="Country" [(ngModel)]="country_id" name="country_id" required formControlName="country_id">
+                                  <mat-option *ngFor="let c of country_list" value="{{c.country_id}}" (click)="getstate(c.country_id)">{{c.name}}</mat-option>
+                              </mat-select>
+                              <mat-error *ngIf="edituserformGroup.get('country_id').hasError('required')">
+                                Please Select Country!
+                              </mat-error> 
+                            <mat-hint>Country</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                        <p>
+                          <mat-form-field appearance="outline">
+                              <mat-label>State</mat-label>
+                              <mat-select placeholder="State"  [(ngModel)]="state_id" name="state_id" required formControlName="state_id">
+                                <mat-option *ngFor="let s of state_list" value="{{s.state_id}}" (click)="getcity(s.state_id)">{{s.name}}</mat-option>
+                              </mat-select>
+                              <mat-error *ngIf="edituserformGroup.get('state_id').hasError('required')">
+                                Please Select State!
+                              </mat-error> 
+                            <mat-hint>State</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                        <p>
+                          <mat-form-field appearance="outline">
+                              <mat-label>City</mat-label>
+                              <mat-select placeholder="City" [(ngModel)]="city_id" name="city_id" required formControlName="city_id">
+                                <mat-option *ngFor="let ci of city_list" value="{{ci.city_id}}" (click)="getpin(ci.state_id,ci.city_id)">{{ci.name}}</mat-option>
+                              </mat-select>
+                              <mat-error *ngIf="edituserformGroup.get('city_id').hasError('required')">
+                                Please Select City!
+                              </mat-error>
+                            <mat-hint>City</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                        <p>
+                          <mat-form-field appearance="outline">
+                              <mat-label>Zipcode</mat-label>
+                              <mat-select placeholder="Zipcode" [(ngModel)]="pincode_id" name="pincode_id" required formControlName="pincode_id">
+                                <mat-option *ngFor="let p of pin_list" value="{{p.pincode_id}}" >{{p.pincode}}</mat-option>
+                              </mat-select>
+                              <mat-error *ngIf="edituserformGroup.get('pincode_id').hasError('required')">
+                                Please Select Zipcode!
+                              </mat-error>
+                            <mat-hint>Zipcode</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                        <p>
+                          <mat-form-field appearance="outline">
+                              <mat-label>Role</mat-label>
+                              <mat-select placeholder="Role" [(ngModel)]="role_id" name="role_id" required formControlName="role_id">
+                                <mat-option *ngFor="let r of roles" value="{{r.name}}" (click)="onchange(r.name,r.id)">{{r.name}}</mat-option>
+                              </mat-select>
+                              <mat-error *ngIf="edituserformGroup.get('role_id').hasError('required')">
+                                Please Select Role!
+                              </mat-error>
+                            <mat-hint>Role</mat-hint>
+                          </mat-form-field>
+                        </p>
+
+                        
+
+
+                        <p>
+                      
+                          <mat-form-field appearance="outline" id="zone">
+                            <mat-label>Zones</mat-label>
+                            <mat-select placeholder="Zone" [(ngModel)]="zonesname" name="zonesname" multiple required formControlName="zonesname">
+                            
+                              <mat-option *ngFor="let z of zones" value="{{z.zone_name}}"  >{{z.zone_name}}</mat-option>
+
+                            </mat-select>
+                            <mat-error *ngIf="edituserformGroup.get('zonesname').hasError('required')">
+                              Please Select Zone!
+                            </mat-error> 
+                          </mat-form-field>
+                        </p>
+
+                       
+
+                        <button type="button" class="btn btn-primary" (click)="onsubmit()" [disabled]="!edituserformGroup.valid">Submit</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+                   </form>
+              </div>
+              <div class="col-sm-2"></div>
+          </div>
+       </div>
+    
+         
+     
+         
+     
+  </div>
+  
+</div>
+
+
+

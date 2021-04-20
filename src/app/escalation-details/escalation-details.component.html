@@ -1,0 +1,41 @@
+
+<div class="mat-dialog-containerTwo">
+    <b><h1  class="ctn">CAUTION</h1></b>
+    <div mat-dialog-content class="mat-dialog-contentTwo">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Notification Category</th>
+            <th scope="col">Level</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Designation</th>
+            <th scope="col">TAT</th>
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let da of alluser;let i = index;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{da.notification_category}}</td>
+            <td>{{da.level}}</td>
+            <td>{{da.name}}</td>
+            <td>{{da.phone}}</td>
+            <td>{{da.email}}</td>
+            <td>{{da.designation}}</td>
+            <td>{{da.tat}}</td>
+            <td>{{da._id}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div mat-dialog-actions class="mat-dialog-actions" >
+      <button mat-button mat-dialog-close id="btn" >Cancel</button>
+    </div>
+    </div>
+
+    

@@ -1,0 +1,1274 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+       
+            <h3>Add SMS Settings</h3>
+            <hr>
+         </div>
+  
+         <div class="form_holder">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="font-size: 80%;">
+                        <br>
+                        <p>      
+                            <mat-form-field appearance="outline" id="gateway">
+                              <mat-label>Select Gateway</mat-label>
+                              <mat-select placeholder="gateway" [(ngModel)]="gateway" name="gateway"> 
+                                <mat-option *ngFor="let g of gateways" value="{{g.gateway_id}},{{g.devices[0].client}},{{g.gateway.mac_id}}"  >{{g.gateway.name}}</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                        </p>
+                        <hr>
+                        <br>
+
+                        <table class="table" *ngIf="gateway != undefined" style="text-align: center;">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">L1</th>
+                                <th scope="col">L2</th>
+                                <th scope="col">L3</th>
+                                <th scope="col">L4</th>
+                                <th scope="col">L5</th>
+                                <th scope="col">L6</th>
+                                <th scope="col">L7</th>
+                                <th scope="col">L8</th>
+                                <th scope="col">L9</th>
+                                <th scope="col">L10</th>
+                                <th scope="col">Action</th>
+
+
+                              
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">ARM By Platform</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="onclick('arm_by_platform',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('arm_by_platform',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_platform',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('arm_by_platform',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="onclick('arm_by_platform',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('arm_by_platform',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_platform',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('arm_by_platform',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_platform',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('arm_by_platform',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_platform',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_platform',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+                              <tr>
+                                <th scope="row">DISARM By Platform</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="onclick('disarm_by_platform',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('disarm_by_platform',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_platform',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('disarm_by_platform',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="onclick('disarm_by_platform',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('disarm_by_platform',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_platform',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('disarm_by_platform',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_platform',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('disarm_by_platform',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_platform',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_platform',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">ARM By Keypad</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="onclick('arm_by_keypad',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('arm_by_keypad',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_keypad',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('arm_by_keypad',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="onclick('arm_by_keypad',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('arm_by_keypad',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_keypad',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('arm_by_keypad',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_keypad',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('arm_by_keypad',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_keypad',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_keypad',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">DISARM By Keypad</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="onclick('disarm_by_keypad',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('disarm_by_keypad',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_keypad',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('disarm_by_keypad',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="onclick('disarm_by_keypad',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('disarm_by_keypad',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_keypad',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('disarm_by_keypad',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_keypad',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('disarm_by_keypad',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_keypad',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_keypad',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">OFFLINE</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="onclick('offline',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('offline',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('offline',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('offline',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="onclick('offline',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('offline',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('offline',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('offline',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('offline',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('offline',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('offline',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('offline',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">ONLINE</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="onclick('online',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('online',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('online',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('online',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="onclick('online',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('online',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('online',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('online',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('online',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="onclick('online',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('online',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('online',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+                            </tbody>
+                               
+                          </table>
+
+                         <hr>
+
+                         <table class="table" *ngIf="gateway != undefined" style="text-align: center;">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">ARM</th>
+                                <th scope="col">L1</th>
+                                <th scope="col">L2</th>
+                                <th scope="col">L3</th>
+                                <th scope="col">L4</th>
+                                <th scope="col">L5</th>
+                                <th scope="col">L6</th>
+                                <th scope="col">L7</th>
+                                <th scope="col">L8</th>
+                                <th scope="col">L9</th>
+                                <th scope="col">L10</th>
+                                <th scope="col">Action</th>
+
+
+                              
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">FIRST</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('first',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('first',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('first',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('first',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('first',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('first',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('first',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('first',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('first',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('first',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('first',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('first',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+
+                              <tr>
+                                <th scope="row">SECOND</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('second',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('second',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('second',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('second',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('second',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('second',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('second',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('second',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('second',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('second',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('second',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('second',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+
+
+                              <tr>
+                                <th scope="row">THIRD</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('third',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('third',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('third',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('third',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('third',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('third',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('third',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('third',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('third',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('third',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('third',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('third',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">FOURTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('fourth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('fourth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fourth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('fourth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('fourth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('fourth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fourth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('fourth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fourth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('fourth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fourth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fourth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+                              <tr>
+                                <th scope="row">FIFTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('fifth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('fifth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fifth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('fifth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('fifth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('fifth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fifth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('fifth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fifth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('fifth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fifth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fifth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">SIXTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('sixth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('sixth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('sixth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('sixth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('sixth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('sixth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('sixth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('sixth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('sixth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('sixth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('sixth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('sixth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">SEVENTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('seventh',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('seventh',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('seventh',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('seventh',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('seventh',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('seventh',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('seventh',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('seventh',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('seventh',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('seventh',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('seventh',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('seventh',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">EIGHTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('eighth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('eighth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eighth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('eighth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('eighth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('eighth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eighth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('eighth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eighth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('eighth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eighth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eighth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">NINETH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('nineth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('nineth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('nineth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('nineth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('nineth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('nineth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('nineth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('nineth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('nineth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('nineth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('nineth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('nineth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">TENTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('tenth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('tenth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tenth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('tenth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('tenth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('tenth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tenth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('tenth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tenth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('tenth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tenth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tenth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">ELEVENTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('eleventh',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('eleventh',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eleventh',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('eleventh',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('eleventh',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('eleventh',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eleventh',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('eleventh',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eleventh',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('eleventh',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eleventh',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eleventh',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">TEWELTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('tewelth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('tewelth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tewelth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('tewelth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="arm('tewelth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('tewelth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tewelth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('tewelth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tewelth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="arm('tewelth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tewelth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tewelth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+                           
+                           
+            
+                            </tbody>
+                               
+                          </table>
+                          
+                          <hr>
+
+
+                          <table class="table" *ngIf="gateway != undefined" style="text-align: center;">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">DISARM</th>
+                                <th scope="col">L1</th>
+                                <th scope="col">L2</th>
+                                <th scope="col">L3</th>
+                                <th scope="col">L4</th>
+                                <th scope="col">L5</th>
+                                <th scope="col">L6</th>
+                                <th scope="col">L7</th>
+                                <th scope="col">L8</th>
+                                <th scope="col">L9</th>
+                                <th scope="col">L10</th>
+                                <th scope="col">Action</th>
+
+
+                              
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">FIRST</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('first',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('first',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('first',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('first',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('first',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('first',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('first',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('first',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('first',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('first',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('first',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('first',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+
+                              <tr>
+                                <th scope="row">SECOND</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('second',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('second',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('second',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('second',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('second',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('second',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('second',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('second',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('second',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('second',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('second',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('second',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+
+
+                              <tr>
+                                <th scope="row">THIRD</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('third',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('third',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('third',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('third',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('third',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('third',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('third',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('third',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('third',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('third',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('third',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('third',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">FOURTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('fourth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('fourth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('fourth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('fourth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('fourth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('fourth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('fourth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('fourth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('fourth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('fourth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('fourth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('fourth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+                              <tr>
+                                <th scope="row">FIFTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('fifth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('fifth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('fifth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('fifth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('fifth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('fifth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('fifth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('fifth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('fifth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('fifth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('fifth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('fifth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">SIXTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('sixth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('sixth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('sixth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('sixth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('sixth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('sixth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('sixth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('sixth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('sixth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('sixth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('sixth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('sixth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">SEVENTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('seventh',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('seventh',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('seventh',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('seventh',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('seventh',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('seventh',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('seventh',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('seventh',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('seventh',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('seventh',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('seventh',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('seventh',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">EIGHTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('eighth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('eighth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('eighth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('eighth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('eighth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('eighth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('eighth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('eighth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('eighth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('eighth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('eighth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('eighth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">NINETH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('nineth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('nineth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('nineth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('nineth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('nineth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('nineth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('nineth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('nineth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('nineth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('nineth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('nineth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('nineth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">TENTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('tenth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('tenth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('tenth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('tenth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('tenth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('tenth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('tenth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('tenth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('tenth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('tenth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('tenth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('tenth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">ELEVENTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('eleventh',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('eleventh',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('eleventh',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('eleventh',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('eleventh',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('eleventh',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('eleventh',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('eleventh',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('eleventh',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('eleventh',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('eleventh',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('eleventh',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">TEWELTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('tewelth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('tewelth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('tewelth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('tewelth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" (change)="disarm('tewelth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('tewelth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('tewelth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('tewelth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('tewelth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   (change)="disarm('tewelth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('tewelth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('tewelth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+                           
+                           
+            
+                            </tbody>
+                               
+                          </table>
+
+
+                          <button type="button" class="btn btn-primary" (click)="onsubmit()">Submit</button>
+
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+         </div>
+      
+           
+       
+           
+       
+    </div>
+    
+  </div>
+  
+  
+  
+  

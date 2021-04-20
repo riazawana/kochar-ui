@@ -1,0 +1,67 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+       
+            <h3>Role Module Mapping Information</h3>
+            <hr>
+         </div>
+  
+         <div class="form_holder">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="font-size: 80%;">
+                      
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p>
+                      <mat-form-field appearance="outline">
+                          <mat-label>Role</mat-label>
+                          <mat-select placeholder="Role" [(ngModel)]="role" name="role">
+                            <mat-option *ngFor="let r of roles" value="{{r._id}},{{r.name}}" >{{r.name}}</mat-option>
+                          </mat-select>
+                        <mat-hint>Role</mat-hint>
+                      </mat-form-field>
+                    </p>
+
+                 
+                  </div>
+                  
+                  <div class="col-sm-6">
+                    <p>
+                      <mat-form-field appearance="outline">
+                          <mat-label>Module</mat-label>
+                          <mat-select placeholder="Module" [(ngModel)]="module_name" name="module_name" >
+                              <mat-option *ngFor="let m of modules" value="{{m.name}}">{{m.name}}</mat-option>
+                          </mat-select>
+                        <mat-hint>Module</mat-hint>
+                      </mat-form-field>
+                    </p>
+
+                
+                  </div>
+                
+
+
+                </div>
+
+                <button type="button" class="btn btn-primary" (click)="onsubmit()">Submit</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+                          <button type="button" class="btn btn-danger">Cancel</button>
+                     
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+         </div>
+      
+           
+       
+           
+       
+    </div>
+    
+  </div>
+  
+  
+  
+  

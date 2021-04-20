@@ -1,0 +1,121 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+         
+            <h3>Smart Meter</h3>
+            <hr>
+         </div>
+  
+        <div class="main">
+            
+          <div class="row" *ngFor="let g of modbus" style="padding: 1%;width: 100%;">
+            <div class="col-sm-12"  style="margin-bottom: 2%;">
+              
+                <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{g.modbus.name}}
+                </mat-panel-title>
+                <mat-panel-description>
+                  <a (click)="openDialog(g.modbus.mac_id)">Command Settings</a>
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+              <div class="row" *ngIf="g.modbus.smartmeter.length != 0" style="width: 100%;margin:0%">
+                
+                <div class="col-sm-4"  *ngFor="let s of g.modbus.smartmeter">
+
+                  <div style="border: 2px solid;
+                  padding: 3%;
+                  border-radius: 5%;">
+
+                
+
+                    <div style="text-align: center;">
+                        <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>0</th>
+                                <th>0</th>
+                                <th>0</th>
+                                <th>0</th>
+                                <th>0</th>
+                                <th>0</th>
+                                <th>0</th>
+                              </tr>
+                            </thead>
+                          </table>
+                          <p><b>Kilo Watt-Hour (Monthly)</b></p>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>0</th>
+                                <th>0</th>
+                                <th>0</th>
+                                <th>0</th>
+                                <th>0</th>
+                                <th>0</th>
+                                <th>0</th>
+                              </tr>
+                            </thead>
+                          </table>
+                          <p><b>Kilo Watt-Hour (Today)</b></p>
+                    </div>
+
+                    <div style="text-align: center;">
+                       <div class="row">
+                           <div class="col-sm-5" style="border: 2px solid black;"><p style="margin:0%"><b>0 kVAh</b></p></div>
+                           <div class="col-sm-2"></div>
+                           <div class="col-sm-5" style="border: 2px solid black;"><p style="margin:0%"><b>0 kVAh</b></p></div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5"><p><b>Monthly</b></p></div>
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5"><p><b>Today</b></p></div>
+ 
+                         </div>
+
+                         <p>Total Energy Consumtion</p>
+
+                         <p><b>Smart Meter</b></p>
+
+                         <p>1.Test12345</p>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+               
+
+              </div>
+
+              <div>
+
+          <button type="button" class="btn btn-primary" (click)="addsmartmeter(g.modbus._id)" style="float: right;">Add Smart-Meter</button>
+
+                </div>
+
+              
+
+                </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+          </div>
+
+      
+        </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  

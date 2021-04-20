@@ -1,0 +1,78 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+          <button type="button"  class="btn btn-primary" (click)="addnewuser()" style="float: right;" [disabled]="!add">Add User</button>
+  
+            <h3>Escalation Matrix View</h3>
+            <hr>
+         </div>
+  
+         <mat-form-field>
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort>
+        
+            <!-- ID Column -->
+            <ng-container matColumnDef="sr_no">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Sr no </th>
+              <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
+            </ng-container>
+        
+            <!-- Progress Column -->
+            <ng-container matColumnDef="hub_name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Zone </th>
+              <td mat-cell *matCellDef="let row"> {{row.zone_name}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="location">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Location </th>
+              <td mat-cell *matCellDef="let row"> {{row.location_name}} </td>
+            </ng-container>
+        
+            <!-- Color Column -->
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+              <td mat-cell *matCellDef="let row" >            
+              
+                <!-- <a (click)="openDialog(row.gateway_id)"><i class="fa fa-eye"></i></a>                
+                <a (click)="deleteMatrix(row.gateway_id)"><i class="fa fa-times ml-3"></i></a>
+                <a (click)="adduser(row._id)"><i class="fa fa-user-plus ml-3"></i></a>     -->
+                
+                <label *ngIf="view" (click)="openDialog(row.location_id,row.mac_id,row.gateway_name)"><i class="fa fa-eye"></i></label>
+                <label *ngIf="edit" (click)="edituser(row._id)"><i class="fa fa-user-plus ml-3"></i></label>
+                <label *ngIf="delete" (click)="deleteMatrix(row._id)"><i class="fa fa-times ml-3"></i></label>                
+                <label *ngIf="!view" ><i class="fa fa-eye"></i></label>
+                <label *ngIf="!edit" ><i class="fa fa-user-plus ml-3"></i></label>
+                <label *ngIf="!delete" ><i class="fa fa-times ml-3"></i></label>  
+
+
+              </td>
+            </ng-container>
+  
+  
+            
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  

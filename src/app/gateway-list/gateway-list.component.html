@@ -1,0 +1,111 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+          <button type="button" class="btn btn-primary" (click)="addgatways()" style="float: right;">Add New gateways</button>
+            <h3>IOT - Gateways</h3>
+            <hr>
+         </div>
+  
+        <div class="main">
+
+          <div class="row" style="padding: 1%;width: 100%;">
+            <div class="col-sm-12" *ngFor="let g of gateway" style="margin-bottom: 2%;">
+              
+                <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+               {{g.name}}
+                </mat-panel-title>
+                <mat-panel-description>
+                  <a (click)="openDialog(g._id)" [disabled]="!command_setting">Command Settings</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-success" [disabled]="!arm" (click)="sendMessage('arm',0,g.mac_id)" style="font-size: 80%;">ARM</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <button type="button" class="btn btn-primary" [disabled]="!disarm"  (click)="sendMessage('disarm',0,g.mac_id)" style="font-size: 80%;">DISARM</button>
+
+
+                  <a (click)="edit(g.mac_id,g.devices[0].client)">Edit</a>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <a (click)="delete(g.mac_id,g.devices[0].client)">Delete</a>
+
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+                
+                <div class="row col-md-12">
+                    <div class="col-md-3"> {{g.mac_id}} - ARMED</div>
+                    <div class="row col-md-3">
+                     <span class="label label-primary tempclass">Temp 1</span><br>                     
+                     <span class="label label-primary tempclass">Temp 2</span><br>                     
+                     <i class="fa fa-refresh refreshcls pt-2" aria-hidden="true"></i>
+                      </div>
+ 
+                      <div class="row col-md-3">
+                       <button type="button" class="btn btn-primary" [disabled]="!relay1"  (click)="sendMessage('relay1',1,g.mac_id)" style="font-size: 60%;">HOOTER / ON</button>
+                       <button type="button" class="btn btn-primary" [disabled]="!relay1"  (click)="sendMessage('relay1',0,g.mac_id)" style="font-size: 60%;">HOOTER / OFF</button>
+
+                     </div>
+ 
+                     <div class="row col-md-3">
+
+                       <button type="button" class="btn btn-primary" [disabled]="!relay2"  (click)="sendMessage('relay2',1,g.mac_id)" style="font-size: 60%;">SIGNAZE / ON</button>
+                       <button type="button" class="btn btn-primary" [disabled]="!relay2"  (click)="sendMessage('relay2',0,g.mac_id)" style="font-size: 60%;">SIGNAZE / OFF</button>
+                     </div>              
+                
+                </div>
+
+                <div class="row tempcls">
+                  <p class="naclass ml-2">{{temp1}}</p><br>
+                  <p class="naclass ml-4">{{temp2}}</p><br>  
+                </div>
+                   <hr> 
+                   
+                   <div class="row">
+                    <div class="col-sm-3"> PORT NAME </div>
+
+                    <div class="col-sm-3"> CURRENT STATUS </div>
+
+
+                    <div class="col-sm-3"> SETTINGS </div>
+
+                    <div class="col-sm-3"> 
+                          <button type="button" class="btn btn-primary" [disabled]="!refresh"  (click)="sendMessage('refresh',0,g.mac_id)" style="font-size: 80%;">REFRESH</button>
+                    </div>
+
+
+                    </div>
+                    <hr>
+
+                    <div class="row" *ngFor="let p of g.devices">
+                        <div class="col-sm-3">Port {{p.port_number}} </div>
+    
+                        <div class="col-sm-3"> {{p.sensor_status}} </div>
+    
+    
+                        <div class="col-sm-3"> <a (click)="port_set(p)" style="color: blue;" [disabled]="!port_setting">Port Settings </a> </div>
+    
+                        <div class="col-sm-3"> 
+                        </div>
+    
+                        <hr>
+                        </div>
+
+                </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+          </div>
+
+      
+        </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  

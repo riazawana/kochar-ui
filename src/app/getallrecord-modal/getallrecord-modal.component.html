@@ -1,0 +1,29 @@
+
+<div class="mat-dialog-containerTwo">
+    <b><h1  class="ctn">Video Recordings</h1></b>
+    <br>
+   
+    <div mat-dialog-content class="mat-dialog-contentTwo">
+            <div class="row" *ngFor="let da of records,let i = index;">
+                <div><p>{{da.filename}}</p></div>
+                <br>
+                <div><p>( {{da.start_time}} - {{da.end_time}} )</p></div>
+                <br>
+                <div><p>{{da.size}}</p></div>
+                <br>
+<button (click)="download(da.hls,i)">download</button>
+<button (click)="getlivefeed(da.rtsp_url)">play</button>
+<br>
+<div id="download{{i}}" style="display: none;">
+  <img src="assets/company_logo/Progress-Loading-1.gif"  style="width: 100%;height: 38px;">
+</div>
+
+<hr>
+            </div>
+    </div>
+    <div mat-dialog-actions class="mat-dialog-actions" >
+      <button mat-button mat-dialog-close id="btn" >Cancel</button>
+    </div>
+    </div>
+
+    

@@ -1,0 +1,166 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+
+            <h3>Router Detail</h3>
+            <hr>
+         </div>
+
+         
+  
+        <div class="main" *ngIf="data != undefined">
+            <div class="row" style="padding: 1%;width: 100%;">
+            
+                <div class="col-sm-3">
+                    <p><b>#{{data.name}}</b></p>
+                   
+                    <p>{{data.mac_id}}</p>
+                    
+
+                    <p>{{data.location[0].address}} </p>
+
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+                <div class="col-sm-3" *ngIf="data.router_info != undefined">
+                    <p>Load Average : <b>{{data.router_info.loadaverage}}</b></p>
+                    <p>Local IP : <b>{{data.router_info.localIP}}</b></p>
+                    <p>Public IP : <b>{{data.router_info.publicIP}}</b></p>
+
+                </div>
+            
+            </div>
+
+            <hr>
+
+            <div class="row" style="padding: 1%;width: 100%;margin: 0%;background-color: #ece8ec;">
+            
+               <div class="row" style="width: 100%;">
+                <div class="col-sm-3">
+                    <p><b>Memory Info:</b></p>
+                   </div>
+                   <div class="col-sm-3">
+                   <p>Total</p>
+                   </div>
+                   <div class="col-sm-3">
+                   <p>Available</p>
+                   </div>
+                   <div class="col-sm-3">
+                   <p>Cached</p>
+                   </div>
+               </div>
+               <div class="row" style="width: 100%;">
+                <div class="col-sm-3">
+                   </div>
+                   <div class="col-sm-3">
+                   <p>124.952 MB</p>
+                   </div>
+                   <div class="col-sm-3">
+                   <p>51.72 MB</p>
+                   </div>
+                   <div class="col-sm-3">
+                   <p>19.452 MB</p>
+                   </div>
+               </div>
+            
+            </div>
+
+            <div style="padding: 1%;width: 100%;margin: 0%;text-align: center;"> <p><b>Data Transmission</b></p> </div>
+      
+            <div>
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">ETH0</th>
+                        <th scope="col">br-lan</th>
+                        <th scope="col">3g-wan</th>
+                        <th scope="col">wwan0</th>
+                        <th scope="col">tun0</th>
+                        <th scope="col">wlan0</th>
+                        <th scope="col">wlan1</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Tx</th>
+                        <td>0</td>
+                        <td>1110110915</td>
+                        <td>0</td>
+                        <td>623891289</td>
+                        <td>87368563</td>
+                        <td>0</td>
+                        <td>1047004362</td>
+
+                      </tr>
+                      <tr>
+                        <th scope="row">Rx</th>
+                        <td>0</td>
+                        <td>1110110915</td>
+                        <td>0</td>
+                        <td>623891289</td>
+                        <td>87368563</td>
+                        <td>0</td>
+                        <td>1047004362</td>
+                        </tr>
+                    </tbody>
+                  </table>
+            </div>
+
+            <div style="padding: 1%;width: 100%;margin: 0%;text-align: center;"> <p><b>LAN Clients</b></p> </div>
+
+            <div class="row" style="padding: 1%;width: 100%;margin:0%">
+            
+                <div class="col-sm-2" style="border: 3px dotted gray;
+                text-align: center;margin: 1%;">
+                    <div></div>
+                    <div><p>C8:2B:96:BF:36:08</p></div>
+                    <div><p>192.168.8.210</p></div>
+                </div>
+
+                <div class="col-sm-2" style="border: 3px dotted gray;
+                text-align: center;margin: 1%;">
+                    <div></div>
+                    <div><p>C8:2B:96:BF:36:08</p></div>
+                    <div><p>192.168.8.210</p></div>
+                </div>
+
+                <div class="col-sm-2" style="border: 3px dotted gray;
+                text-align: center;margin: 1%;">
+                    <div></div>
+                    <div><p>C8:2B:96:BF:36:08</p></div>
+                    <div><p>192.168.8.210</p></div>
+                </div>
+
+                <div class="col-sm-2" style="border: 3px dotted gray;
+                text-align: center;margin: 1%;">
+                    <div></div>
+                    <div><p>C8:2B:96:BF:36:08</p></div>
+                    <div><p>192.168.8.210</p></div>
+                </div>
+
+              
+               
+            
+            </div>
+
+            <div style="padding: 1%;width: 100%;margin: 0%;text-align: center;"> 
+          <button type="button" class="btn btn-primary" (click)="analysis(id,data.mac_id)" >Analysis</button>
+          <button type="button" class="btn btn-primary" (click)="firmware(data.mac_id)" >Firmware Update</button>
+          <button type="button" class="btn btn-primary" (click)="reboot()" >Reboot</button>
+             
+            </div>
+
+
+        </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  

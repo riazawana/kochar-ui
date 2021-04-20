@@ -1,0 +1,136 @@
+<div class="mat-dialog-containerThree" style="font-size: 85%;">
+      
+  <div class="row modal-header hdrclass"> 
+     <h5 class="modal-title" id="exampleModalCenterTitle">Command Settings</h5>
+ <button (click)="onNoClick()">
+   closed
+ </button>
+     
+   </div>
+         <div class="row col-sm-12 modal-body">                  
+
+             <div class="row col-sm-12">
+               <label class="col-sm-6">Relay Trigger Time</label>
+               <div class="form-group col-sm-6">
+                 <select class="form-control" [(ngModel)]="relaytriger" (change)="sendMessage('relay',relaytriger,data.id)">
+                   <option  value="10">10 seconds </option>
+                   <option  value="20">20 seconds</option>
+                 </select>
+               </div>
+             </div>
+
+             <div class="row col-sm-12">
+               <label class="col-sm-6">Polling Time</label>
+               <div class="form-group col-sm-6">
+                 <select class="form-control"  [(ngModel)]="pollingtime" (change)="sendMessage('poll',pollingtime,data.id)">
+                   <option  value="10">10 seconds </option>
+                   <option value="10">20 seconds</option>
+                 </select>
+               </div>
+             </div>
+
+             <div class="row col-sm-12">
+               <label class="col-sm-6">Polling URL</label>
+               <div class="form-group col-sm-5">
+                 <input class="form-control form-control-sm"  [(ngModel)]="url" type="text" placeholder="URL">
+               </div>
+               <div class="col-sm-1">
+                 <button type="button" class="btn btn-secondary updatecls" (click)="sendMessage('url',url,data.id)">Update</button>
+                 </div>
+             </div>
+
+             <div class="row col-sm-9">
+               <label class="col-sm-6">KeyPad Password</label>
+               <div class="form-group col-sm-2 keypadclass">
+                 <input class="form-control form-control-sm"  [(ngModel)]="KeyPad"  type="number">
+               </div>
+               <div class="col-sm-1">
+                 <button type="button" class="btn btn-secondary updatecls" (click)="sendMessage('Keypad',KeyPad,data.id)">Update</button>
+                 </div>
+             </div>
+
+             <div class="row col-sm-12">
+               <label class="col-sm-6">ARM Delay</label>
+               <div class="form-group col-sm-6">
+                 <select class="form-control" [(ngModel)]="armval" (change)="sendMessage('Arm',armval,data.id)">
+                   <option  value="10">10 seconds </option>
+                   <option value="20">20 seconds</option>
+                 </select>
+
+                 
+               </div>
+             </div>
+
+             <div class="row col-sm-12">
+               <label class="col-sm-6">DISARM Delay</label>
+               <div class="form-group col-sm-6">
+                 <select class="form-control" [(ngModel)]="disarmval" (change)="sendMessage('Disarm',disarmval,data.id)">
+                   <option  value="10">10 seconds </option>
+                   <option value="20">20 seconds</option>
+                 </select>
+               </div>
+             </div>
+
+             <div class="row col-sm-12">
+               <label class="col-sm-6">Firmware Version</label>
+               <div class="form-group col-sm-5">
+                 <input class="form-control form-control-sm" [(ngModel)]="Firmware" type="text">
+               </div>
+               <div class="col-sm-1">
+                 <button type="button" class="btn btn-secondary updatecls" (click)="sendMessage('Firmware',Firmware,data.id)">Update</button>
+                 </div>
+             </div>
+
+             <div class="row col-sm-12">
+               <label class="col-sm-6">Calibrate Temperature Sensor</label>                      
+               <div class="col-sm-6">
+                 <button type="button" class="btn btn-secondary tempsensor">Get</button>
+                 </div>
+             </div>
+
+             <div class="row col-sm-12">
+               <div class="col-sm-6"></div>                      
+               <div class="col-sm-6">
+                 <button type="button" class="btn btn-secondary calicls mt-2">Calibrate Temperature Sensor(s)</button>
+                 </div>
+             </div>
+             <div class="row col-sm-12">
+               <div class="col-sm-6"></div>                      
+               <div class="col-sm-3 statuscls">
+                 <label>Calibrate Status:</label>                        
+                 </div>
+              
+                 <div class="col-sm-1">
+                <p class="failcls">Fail</p>                        
+                   </div>
+                   <div class="col-sm-2">
+                     <p class="upcls">[ Update ]</p>
+                     </div>
+
+             </div>
+
+             <div class="row col-sm-12">
+               <label class="col-sm-6">Restart Router Over SMS</label>                      
+               <div class="col-sm-6">
+                 <button type="button" class="btn btn-secondary tempsensor" (click)="sendMessage('restart',1,data.id)">Restart Router Over SMS</button>
+                 </div>
+             </div>
+
+             <div class="row col-sm-12">
+               <label class="col-sm-6">Reboot Schedule <p class="hrscls">(in Hours)</p></label>
+               <div class="form-group col-sm-4">
+                 <input class="form-control form-control-sm" [(ngModel)]="Reboot" type="text">
+               </div>
+               <div class="col-sm-1">
+                 <button type="button" class="btn btn-secondary updatecls" (click)="sendMessage('reboot',Reboot,data.id)">Update</button>                        
+                 </div>
+                 <div class="col-sm-1">
+                   <button type="button" class="btn btn-secondary rebootget">Get</button>
+                   </div>
+             </div>
+             
+           
+           
+         </div>
+
+</div>

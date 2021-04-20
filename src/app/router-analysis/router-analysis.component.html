@@ -1,0 +1,69 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+       
+            <h3>Root Cause Analysis</h3>
+            <hr>
+         </div>
+  
+         <div class="main">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="font-size: 80%;">
+                        <br>
+                       
+                        <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Router Mac ID</mat-label>
+                              <input matInput [(ngModel)]="mac" name="mac" placeholder="mac">
+                              <mat-hint>Router Mac ID</mat-hint>
+                            </mat-form-field>
+                          </p>
+
+                         
+            
+                        
+                          <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>IOT Gateway Mac ID</mat-label>
+                              <input matInput [(ngModel)]="iot" name="iot" placeholder="(00:00:00:00:00:00)">
+                              <mat-hint>IOT Gateway Mac ID</mat-hint>
+                            </mat-form-field>
+                          </p>
+                         
+                           
+                        <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Video Gateway Mac ID</mat-label>
+                              <input matInput [(ngModel)]="video" name="video" placeholder="(00:00:00:00:00:00)">
+                              <mat-hint>Video Gateway Mac ID</mat-hint>
+                            </mat-form-field>
+                          </p>
+            
+            
+                        
+                         
+
+                          <button type="button" class="btn btn-primary" (click)="cmmd('DHCP')">DHCP File</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-primary" (click)="cmmd('DNS')">DNS Status</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+                          <button type="button" class="btn btn-primary" (click)="cmmd('ARP')">ARP Table</button>
+                     
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+         </div>
+      
+           
+       
+           
+       
+    </div>
+    
+  </div>
+  
+  
+  
+  

@@ -1,0 +1,46 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  .mat-dialog-container {
+    padding: 0%;
+  }
+
+  .containt{
+    margin: 1%;
+    width: 100%;
+}
+
+.sub-heading{
+    color:#022656;
+}
+
+.main{
+    background: white;
+}
+
+p,table{
+  margin: 1%;
+}
+
+.row{
+  width: 100%;
+    margin: 0%;
+}
+
+.example-form mat-slide-toggle {
+    margin: 8px 0;
+    display: block;
+  }
+
+
+ 

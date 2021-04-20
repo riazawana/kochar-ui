@@ -1,0 +1,110 @@
+<div class="row" *ngIf= "data">
+<div class="containt w-100 mr-2 ml-2">
+    
+    <div class="row pt-5">
+    <div class="row col-md-12 divclass pt-2">
+        <div class="col-md-4">
+         <label>Date & Time: {{ date }}</label>
+        </div>
+        <div class="col-md-4">
+          <label >Zone: {{data.zone}} </label>
+        
+        </div>
+           <div class="col-md-4">
+            <label>Location: {{data.locationname}}</label>
+           </div>
+        </div>
+        <div class="row col-md-12 divclass pt-2">
+            <div class="col-md-4">
+             <label>Priority: {{data.priority}}</label>
+             <span class="priorityclass ml-1 pb-1 pt-1 pr-1 pl-1">P1</span>
+            </div>
+            <div class="col-md-4">
+                <label *ngIf="data.notification_category_name == 'Risk Assessment' && data.notification_type ==  'iot gateway'">Room: {{data.data.room_name}} </label>
+               </div>
+               <div class="col-md-4">
+                <label *ngIf="data.notification_category_name == 'Risk Assessment'">Sensor Name:  {{data.data.sensor_name}}</label>
+            
+            
+              </div>
+            </div>
+            </div>
+
+            <div class="row col-md-12 fieldclass w-100 pt-2 mt-2 mr-0 ml-0">
+                
+                <div class="row col-md-6">
+                    <form>
+                       <p class="porttime">{{data.data.notification}}</p>
+                        <hr class="hrclass"> 
+                        <label class="notictgry">Category of Notification: {{data.notification_category_name}}</label>
+                        <hr class="hr"> 
+                        <label>Notification Type: {{data.notification_type}}</label>
+     
+                        <div>
+                          <mat-radio-group
+                            aria-labelledby="example-radio-group-label"
+                            class="example-radio-group"
+                            [(ngModel)]="valid" name="valid">
+                            <mat-radio-button class="example-radio-button" [value]="true">
+                            Valid
+                            </mat-radio-button>
+                            <mat-radio-button class="example-radio-button" [value]="false">
+                              Invalid
+                              </mat-radio-button>
+                          </mat-radio-group>
+
+                      </div>
+                        <div class="form-group row">
+                          
+                          <label for="colFormLabelSm" class="col-md-4 col-form-label col-form-label-sm">Voice Log:</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control form-control-sm" [(ngModel)]="voicelog" name="voicelog"  placeholder="Paste voice recording URL here">
+                          </div>                          
+                        </div>  
+                        
+                        <div class="form-group">
+                          <label for="remarks">Remarks*:</label>
+                          <textarea class="form-control pt-0" [(ngModel)]="remarks"  name="remarks" rows="1"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-light ml-5 btnclass">Create Support Ticket</button>
+                        <button type="button" class="btn btn-primary btnclass" (click)="update()">Submit</button>
+                        
+                      </form>
+                    </div>
+                    
+
+                    <div class="row col-md-6">
+                        <h3 class="footage pt-4">Your Footage is loading...</h3>
+                    </div>
+
+                </div>
+
+                <div class="row col-md-12 w-100 mgnt mt-2 ml-0">
+                  <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                  <div class="col-md-2 mt-2">
+                  
+                  <h5>E-mail To Management</h5>
+                  </div>
+                  <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                  <div class="col-md-2 mt-2">
+                    
+                    <h5>SMS To Management</h5>
+                    </div>
+                    <span><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                    <div class="col-md-4 mt-2">
+                     
+                      <h5>Call To Branch</h5>
+                      </div>
+                      <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
+                      <div class="col-md-4 mt-2">
+                        
+                        <h5>Call To Police</h5>
+                        </div>
+                  </div>
+</div>    
+</div>
+
+
+
+
+

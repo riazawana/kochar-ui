@@ -1,0 +1,59 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+          <!-- <button type="button" class="btn btn-primary" (click)="addtemplate()" style="float: right;">Add Template</button> -->
+  
+            <h3>Gateway Status</h3>
+            <hr>
+         </div>
+         <div class="form_holder">
+         <div class="row" style="padding: 1%;width: 100%;text-align: center;">
+         
+
+            <div class="col-sm-2">
+            <h6><b>Status</b></h6>
+            </div>
+            <div class="col-sm-3">
+            <h6><b>Location</b></h6>
+            </div>
+            <div class="col-sm-3">
+            <h6><b>Details</b></h6>
+            </div>
+            <div class="col-sm-4">
+            <h6><b>Current Mode</b></h6>
+            </div>
+
+    
+          </div>
+
+
+          <div class="row" *ngFor="let g of gateways;let i=index;" style="text-align: center;">
+             
+            <div class="col-sm-2">
+            <h6>
+              <span *ngIf="g.gateway.is_online == false" class="reddot"></span>
+              <span *ngIf="g.gateway.is_online == true" class="greendot"></span>  
+            </h6>
+            </div>
+            <div class="col-sm-3">
+            <h6>{{g.locations.name}}</h6>
+            </div>
+            <div class="col-sm-3">
+            <h6>{{g.gateway.mac_id}}</h6>
+            </div>
+            <div class="col-sm-4">
+            <h6 *ngIf="g.gateway.mode == 1">ARM</h6>
+            <h6 *ngIf="g.gateway.mode == 0">DISARM</h6>
+
+
+            </div>
+          </div>
+          </div>
+  
+</div>
+    
+</div>
+
+  
+  

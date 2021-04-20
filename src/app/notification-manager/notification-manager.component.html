@@ -1,0 +1,60 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+            <h3>Notification Manager</h3>
+        </div>
+        <hr>  
+
+        <div class="main">
+            <p>      
+                <mat-form-field appearance="outline" id="gateway" class="selectcls">
+                  <mat-label>Select Gateway</mat-label>
+                  <mat-select placeholder="gateway" [(ngModel)]="gateway" name="gateway"> 
+                    <mat-option *ngFor="let g of gateways" value="{{g.gateway_id}}" (click)="getport(g.gateway_id)"  >{{g.gateway.name}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+            </p>
+
+
+            <table class="table" *ngIf="ports.length != 0" style="text-align: center;">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Port</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">ARM</th>
+                    <th scope="col">DISARM</th>
+                  
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let da of ports;let i = index;">
+                    <th scope="row">{{da.port_number}}</th>
+                    <td>{{da.sensor_name}}</td>
+                    <td>
+                        <mat-checkbox class="example-margin" [disabled]="!isvalid"  [checked]="da.notif_arm" (change)="onclick('notif_arm',$event.checked,da._id)" >  </mat-checkbox>
+                      </td>
+                    <td>
+                        <mat-checkbox class="example-margin"  [disabled]="!isvalid"  [checked]="da.notif_diarm"  (change)="onclick('notif_diarm',$event.checked,da._id)">  </mat-checkbox>
+                    </td>
+        
+                  </tr>
+
+                  <button type="button" class="btn btn-primary" *ngIf="isvalid == true" (click)="submit()" style="margin-left: 190%;">Update</button>
+
+                </tbody>
+                   
+              </table>
+
+         
+
+
+
+        </div>
+
+    
+    </div>
+</div>
+  
+  
+  

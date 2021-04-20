@@ -1,0 +1,104 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+         
+            <h3>Secondry gateway</h3>
+            <hr>
+         </div>
+  
+        <div class="main">
+            
+          <div class="row" *ngFor="let g of modbus; let i = index;" style="padding: 1%;width: 100%;">
+            <div class="col-sm-12"  style="margin-bottom: 2%;">
+              
+                <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+               {{g.modbus.name}}
+                </mat-panel-title>
+                <mat-panel-description>
+                  <a (click)="openDialog(g.modbus.mac_id)">Command Settings</a>
+              
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+                
+                <div class="row col-md-12">
+                    <div class="col-md-3"> {{g.modbus.mac_id}} </div>
+                    <div class="row col-md-3">
+                     <span class="label label-primary tempclass">Temp 1</span><br>                     
+                     <span class="label label-primary tempclass">Temp 2</span><br>                     
+                     <i class="fa fa-refresh refreshcls pt-2" aria-hidden="true"></i>
+                      </div>
+
+                      <div class="col-sm-3"></div>
+ 
+                      <div class="col-sm-3">
+                       <!-- <button type="button" class="btn btn-primary" [disabled]="!relay1"  (click)="sendMessage('relay1',1,g.mac_id)" style="font-size: 60%;">HOOTER / ON</button>
+                       <button type="button" class="btn btn-primary" [disabled]="!relay1"  (click)="sendMessage('relay1',0,g.mac_id)" style="font-size: 60%;">HOOTER / OFF</button> -->
+                       <mat-slide-toggle [(ngModel)]="g.modbus.relays[0].current_status" (change)="relayonclick(i,$event.checked)">Relay: 
+                           <span *ngIf="g.modbus.relays[0].current_status == 1">ON</span>
+                           <span *ngIf="g.modbus.relays[0].current_status == 0">OFF</span>
+                       </mat-slide-toggle>
+                     </div>
+ 
+                                
+                
+                </div>
+
+                <div class="row tempcls">
+                  <p class="naclass ml-2">{{ g.modbus.ports[2].default_state }}</p><br>
+                  <p class="naclass ml-4">{{ g.modbus.ports[3].default_state }}</p><br>  
+                </div>
+                   <hr> 
+                   
+                   <div class="row">
+                    <div class="col-sm-3"> <b>PORT NAME</b> </div>
+                    <div class="col-sm-3"> <b>CURRENT STATUS</b> </div>
+                    <div class="col-sm-3">  </div>
+                    <div class="col-sm-3">  </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-3"> {{ g.modbus.ports[0].port_name }} </div>
+                        <div class="col-sm-3"> {{ g.modbus.ports[0].current_status }}
+                            <span *ngIf="g.modbus.ports[1].current_status == 0">( Non-triggered )</span> 
+                            <span *ngIf="g.modbus.ports[1].current_status == 1">( Triggered )</span>     
+                        </div>
+                        <div class="col-sm-3">  </div>
+                        <div class="col-sm-3">  </div>
+                    </div>
+
+                    <hr>
+
+
+                    <div class="row">
+                        <div class="col-sm-3"> {{ g.modbus.ports[1].port_name }} </div>
+                        <div class="col-sm-3"> {{ g.modbus.ports[1].current_status }} 
+                            <span *ngIf="g.modbus.ports[1].current_status == 0">( Non-triggered )</span> 
+                            <span *ngIf="g.modbus.ports[1].current_status == 1">( Triggered )</span> 
+                        </div>
+                        <div class="col-sm-3">  </div>
+                        <div class="col-sm-3">  </div>
+                    </div>
+                   
+                    
+
+                </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+          </div>
+
+      
+        </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  

@@ -1,0 +1,176 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+       
+            <h3>Camera(S)</h3>
+            <hr>
+         </div>
+  
+        
+       <div class="row">
+        <div class="col-sm-4">
+            <p>Location</p>
+        </div>
+        <div class="col-sm-4">
+            <p>Gateway Details</p>
+        </div>
+        <div class="col-sm-4">
+        </div>
+       </div>
+
+       <div class="row">
+        <div class="col-sm-4">
+            <p>Name : asdf</p>
+            <p>Address : asdf</p>
+        </div>
+        <div class="col-sm-4">
+            <p>Name :  TestNVR IOT</p>
+            <p>Host :  http://123.53.345:1312</p>
+        </div>
+        <div class="col-sm-4">
+            <p>Camera Zero <button (click)="getlivefeed(this.zero.hls)">b</button></p>
+        </div>
+       </div>
+
+       <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
+      
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+      
+          <!-- ID Column -->
+          <ng-container matColumnDef="camera_status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Camera Status </th>
+            <td mat-cell *matCellDef="let row"> {{row.status}} </td>
+          </ng-container>
+      
+          
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Camera Name </th>
+            <td mat-cell *matCellDef="let row">Camera {{row.name}} </td>
+          </ng-container>
+
+          <!-- Progress Column -->
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+            <td mat-cell *matCellDef="let row">
+                 <p *ngIf="row.type == 'ipaddress'">IP</p>
+                 <p *ngIf="row.type != 'ipaddress'">Analog</p>
+             </td>
+            
+
+          </ng-container>
+          <!-- Progress Column -->
+          <ng-container matColumnDef="footage">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Footage Retention </th>
+            <td *matCellDef="let i = index;let row"> 
+              <p (click)="footage_ret(this.mac_id,row.camera_id,i)" *ngIf="ft[i] == ''" >click here</p>  
+              <p *ngIf="ft[i] != ''" >{{ft[i]}}</p>  
+
+             </td>
+          </ng-container>
+      
+  
+          <ng-container matColumnDef="live">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Live Feed </th>
+            <td mat-cell *matCellDef="let row"> <button (click)="getlivefeed(row.rtsp_url)">Get Recording</button> </td>
+          </ng-container>
+
+          <ng-container matColumnDef="get">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Get Recording </th>
+            <td mat-cell *matCellDef="let row;let i = index;" > 
+
+              <mat-form-field appearance="fill">
+                <mat-label>Choose a start date</mat-label>
+                <input matInput [matDatepicker]="picker1"  [(ngModel)]="start[i]" >
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="fill">
+                <mat-label>Choose a end date</mat-label>
+                <input matInput [matDatepicker]="picker2"  [(ngModel)]="end[i]" >
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+              <br>
+              <!-- <button (click)="recordedVideos(this.mac_id,start[i],end[i],row.camera_id)">Get all</button> -->
+              <button (click)="openDialog(this.mac_id,start[i],end[i],row.camera_id)">Get all</button>
+
+              
+            
+            </td>
+          </ng-container>
+          
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      </div>
+           
+       
+    </div>
+    
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-sm-3">
+    <p>Total CPU Usage</p>
+    <br>
+    <span id="tcu">0</span>
+    </div>
+    <div class="col-sm-3">
+      <p>App CPU Usage</p>
+      <br>
+      <span id="acu">0</span>
+      </div>
+      <div class="col-sm-3">
+        <p>RAM Usage</p>
+        <br>
+        <span id="ru">0</span>
+        </div>
+        <div class="col-sm-3">
+          <p>Average Load</p>
+          <br>
+          <span id="al">0</span>
+          </div>
+  </div>
+
+
+  <div>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Process ID</th>
+          <th scope="col">Process Type</th>
+          <th scope="col">Playback URL/Status</th>
+          <th scope="col">Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let da of allcamera;let i = index;">
+          <th scope="row">{{i+1}}</th>
+          <td>{{da.camProcessId}}</td>
+          <td>{{da.type}}</td>
+          <td>{{da.status}}</td>
+          <td (click)="delete(da.camProcessId)">Del</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+

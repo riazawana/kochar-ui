@@ -1,0 +1,48 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+
+
+  .containt{
+    margin: 1%;
+    width: 100%;
+}
+
+.sub-heading{
+    color:#022656;
+}
+
+.main{
+    background: white;
+}
+.tempclass{
+  background: #1a79a7;
+  color: white;
+  border-radius: 3px;
+  font-size: 72%;    
+  padding: 1px;
+  margin: 5px;
+  font-weight: 500;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.naclass{
+color: #4d7196;
+}
+.tempcls{
+  margin-left: 25%;
+}
+.refreshcls{
+  color: #4d7196;
+}
+

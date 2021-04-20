@@ -1,0 +1,61 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+         
+            <h3>Add Sub module</h3>
+            <hr>
+         </div>
+  
+        <div class="main">
+            
+              
+         <div class="form_holder">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="font-size: 80%;">
+                        <br>
+                        <form  >
+                        <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Name</mat-label>
+                              <input matInput  [(ngModel)]="name" name="name" placeholder="Name" required >
+                           
+                              <mat-hint>Name</mat-hint>
+                            </mat-form-field>
+                          </p>
+                                     
+                        
+                         
+                          <p>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Module</mat-label>
+                                <mat-select  placeholder="Module"  [(ngModel)]="Module" name="Module" required >
+                                  <mat-option  *ngFor="let m of moduledata" value="{{m.name}}" >{{m.name}}</mat-option>
+                                </mat-select>
+                            
+                              <mat-hint>Module</mat-hint>
+                            </mat-form-field>
+                          </p>
+   
+  
+                          <button type="button" class="btn btn-primary" (click)="onsubmit()">Submit</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+                          <!-- <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button> -->
+                        </form>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+         </div>
+
+             
+              
+        </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  

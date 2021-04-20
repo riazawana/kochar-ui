@@ -1,0 +1,52 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+         
+            <h3>Role Module Mapping</h3>
+            <hr>
+         </div>
+  
+         <div class="form_holder" >
+  
+          <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Role Name</mat-label>
+                <input matInput [(ngModel)]="role_name"  name="role_name" placeholder="Role Name" [disabled]="!view">
+                <mat-hint>Role Name</mat-hint>
+              </mat-form-field>
+            </p>
+   <div *ngIf="data.length != 0">
+        <div class="row" *ngFor="let s of data.mapping">
+           
+          <div class="col-sm-4">
+              <label>Module : </label>
+          </div>
+          <div class="col-sm-4">
+              <label>{{s.modulename}}</label>
+          </div>
+          <div class="col-sm-4" >
+              <div class="row" *ngFor="let ss of s.submodulename">
+                  <div class="col-sm-12">{{ss.submodule_name}}</div>
+              </div>
+          </div>
+
+         
+      </div>
+   </div>       
+         
+  
+            
+              
+  
+           
+            
+      </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  

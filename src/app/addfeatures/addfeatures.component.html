@@ -1,0 +1,68 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+          <button type="button" class="btn btn-primary" (click)="addsubmodule()" style="float: right;"  >Add Submodule</button>
+       
+            <h3>Add Feature</h3>
+            <hr>
+         </div>
+  
+         
+         <div class="form_holder">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="font-size: 80%;">
+                        <br>
+                        <form  [formGroup]="userformGroup">
+                        <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Name</mat-label>
+                              <input matInput [(ngModel)]="name" name="name" placeholder="Name" required formControlName="name">
+                              <mat-error *ngIf="userformGroup.get('name').hasError('required')">
+                                Name is Required!
+                              </mat-error>
+                              <mat-error *ngIf="userformGroup.get('name').hasError('minlength')">
+                               Name should be atleast 4 characters long!
+                              </mat-error> 
+                              <mat-hint>Name</mat-hint>
+                            </mat-form-field>
+                          </p>
+                                     
+                        
+  
+                          <p>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Type</mat-label>
+                                <mat-select placeholder="type"  [(ngModel)]="type" name="type" required formControlName="type">
+                                  <mat-option  value="button" >Button</mat-option>
+                                  <mat-option  value="module" >Module</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="userformGroup.get('type').hasError('required')">
+                                  Please Select type!
+                                </mat-error>  
+                              <mat-hint>Type</mat-hint>
+                            </mat-form-field>
+                          </p>
+   
+  
+                          <button type="button" class="btn btn-primary" (click)="onsubmit()" [disabled]="!userformGroup.valid">Submit</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+                          <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+                        </form>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+         </div>
+      
+           
+       
+           
+       
+    </div>
+    
+  </div>
+  
+  
+  
+  

@@ -1,0 +1,66 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+
+
+ 
+
+
+.containt{
+  margin: 1%;
+  width: 100%;
+}
+
+.sub-heading{
+  color:#022656;
+}
+
+.form_holder{
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.clear{
+  clear: both;
+}
+
+.profile_heading{
+  color: #ccc;
+}
+
+
+
+span{
+  padding: 1%;
+}
+
+
+.reddot {
+  height: 10px;
+  width: 10px;
+  background-color: rgb(226, 21, 21);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+.greendot {
+  height: 10px;
+  width: 10px;
+  background-color: rgb(50, 240, 12);
+  border-radius: 50%;
+  display: inline-block;
+}

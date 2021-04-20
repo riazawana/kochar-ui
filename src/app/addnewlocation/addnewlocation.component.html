@@ -1,0 +1,112 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+         
+            <h3>Add New Location</h3>
+            <hr>
+         </div>
+  
+        <div class="main">
+            
+            <mat-tab-group dynamicHeight [selectedIndex]="selectedIndex" style="font-size: 85%;">
+                <mat-tab label="Add Location" >
+                  <div class="example-large-box mat-elevation-z4">
+                    
+                    <div class="row" id="row">
+                        <div class="col-sm-12">
+                            <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Location Name</mat-label>
+                                  <input matInput [(ngModel)]="lo_name" name="lo_name" placeholder="Location Name">
+                                  <mat-hint>Location Name</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Site Type</mat-label>
+                                  <input matInput [(ngModel)]="site" name="site" placeholder="Site Type">
+                                  <mat-hint>Site Type</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Address</mat-label>
+                                  <input matInput [(ngModel)]="add" name="add" placeholder="Address">
+                                  <mat-hint>Address</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Country</mat-label>
+                                    <mat-select placeholder="Country" [(ngModel)]="country_id" name="country_id">
+                                        <mat-option *ngFor="let c of country_list" value="{{c.country_id}}" (click)="getstate(c.country_id)">{{c.name}}</mat-option>
+                                    </mat-select>
+                                  <mat-hint>Country</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>State</mat-label>
+                                    <mat-select placeholder="State"  [(ngModel)]="state_id" name="state_id">
+                                      <mat-option *ngFor="let s of state_list" value="{{s.state_id}}" (click)="getcity(s.state_id)">{{s.name}}</mat-option>
+                                    </mat-select>
+                                  <mat-hint>State</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>City</mat-label>
+                                    <mat-select placeholder="City" [(ngModel)]="city_id" name="city_id">
+                                      <mat-option *ngFor="let ci of city_list" value="{{ci.city_id}}" (click)="getpin(ci.state_id,ci.city_id)">{{ci.name}}</mat-option>
+                                    </mat-select>
+                                  <mat-hint>City</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Zipcode</mat-label>
+                                    <mat-select placeholder="Zipcode" [(ngModel)]="pincode_id" name="pincode_id">
+                                      <mat-option *ngFor="let p of pin_list" value="{{p.pincode_id}}" >{{p.pincode}}</mat-option>
+                                    </mat-select>
+                                  <mat-hint>Zipcode</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-checkbox class="example-margin" [(ngModel)]="site_live">Site Live </mat-checkbox>
+                              </p>
+                        </div>
+                    </div>
+
+
+                  </div>
+
+                  <button type="button" class="btn btn-primary" (click)="submit_location()" style="float: right;">Next</button>
+        
+                </mat-tab>
+              </mat-tab-group>
+
+           
+
+              
+                
+
+             
+              
+        </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  

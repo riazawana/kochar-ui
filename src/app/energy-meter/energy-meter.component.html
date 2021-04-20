@@ -1,0 +1,49 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+          <button type="button" class="btn btn-primary" (click)="addenergy()" style="float: right;">Add New Energy Meter</button>
+
+            <h3>Energy Meter</h3>
+            <hr>
+         </div>
+
+         
+  
+        <div class="main" *ngIf="energylist != undefined;">
+
+          <div class="row ml-2 pt-5 rowcls">
+            <div class="col-sm-3 ml-3 lclass" *ngFor="let l of energylist">
+              
+
+                     <mat-card class="example-card"  style="text-align: center;">
+                     <fa-icon [icon]="faMapMarker" style="font-size: 300%;"></fa-icon>
+                     <br>
+                     <br>
+                      <mat-card-content>
+                        <a (click)="edit(l._id)">Edit</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a (click)="delete(l.mac_id,l.client)">Delete</a>
+
+                         <button type="button" class="btn btn-primary btn-block" (click)="openenergy(l._id)" >{{l.name}}</button>
+                      </mat-card-content>
+
+                     
+                     
+                      
+                    </mat-card>
+
+            </div>
+          </div>
+
+          
+
+        </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  

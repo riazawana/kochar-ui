@@ -1,0 +1,493 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+       
+            <h3>View SMS Settings</h3>
+            <hr>
+         </div>
+  
+         <div class="form_holder">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="font-size: 80%;">
+                        <br>
+                        <p>      
+                            <mat-form-field appearance="outline" id="gateway">
+                              <mat-label>Select Gateway</mat-label>
+                              <mat-select placeholder="gateway" [(ngModel)]="gateway" name="gateway"> 
+                                <mat-option *ngFor="let g of gateways" value="{{g.gateway_id}}"  >{{g.gateway.name}}</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                        </p>
+                        <hr>
+                        <br>
+
+                         <table class="table" *ngIf="gateway != undefined" style="text-align: center;">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">L1</th>
+                                <th scope="col">L2</th>
+                                <th scope="col">L3</th>
+                                <th scope="col">L4</th>
+                                <th scope="col">L5</th>
+                                <th scope="col">L6</th>
+                                <th scope="col">L7</th>
+                                <th scope="col">L8</th>
+                                <th scope="col">L9</th>
+                                <th scope="col">L10</th>
+                                <th scope="col">Action</th> 
+
+
+                              
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">ARM By Platform</th>
+                                <td *ngFor = "let da of data.arm_by_platform, let ia= index">
+                                    <mat-checkbox class="example-margin"  [checked]= "da" >  </mat-checkbox>
+                                </td>
+                                
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+                              <tr>
+                                <th scope="row">DISARM By Platform</th>
+                                <td *ngFor = "let dd of data.disarm_by_platform, let id= index">
+                                    <mat-checkbox class="example-margin"  [checked]= "dd" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">ARM By Keypad</th>
+                                <td *ngFor = "let dak of data.arm_by_keypad, let iak= index">
+                                    <mat-checkbox class="example-margin"  [checked]= "dak" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">DISARM By Keypad</th>
+                                <td *ngFor = "let ddk of data.disarm_by_keypad, let idk= index">
+                                    <mat-checkbox class="example-margin" [checked]= "ddk" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">OFFLINE</th>
+                                <td *ngFor = "let dff of data.offline, let iff= index">
+                                    <mat-checkbox class="example-margin"  [checked]= "dff" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">ONLINE</th>
+                                <td *ngFor = "let do of data.online, let io= index">
+                                    <mat-checkbox class="example-margin"  [checked]= "do" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+                            </tbody>
+                               
+                          </table>
+
+                         <hr>
+
+                         <table class="table" *ngIf="gateway != undefined" style="text-align: center;">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">ARM</th>
+                                <th scope="col">L1</th>
+                                <th scope="col">L2</th>
+                                <th scope="col">L3</th>
+                                <th scope="col">L4</th>
+                                <th scope="col">L5</th>
+                                <th scope="col">L6</th>
+                                <th scope="col">L7</th>
+                                <th scope="col">L8</th>
+                                <th scope="col">L9</th>
+                                <th scope="col">L10</th>
+                                <th scope="col">Action</th>
+
+
+                              
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">FIRST</th>
+                                <!--  *ngFor = "let do of data.arm[1], let io= index" -->
+                                <td *ngFor = "let do of data.arm[1], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                              
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+
+                              <tr>
+                                <th scope="row">SECOND</th>
+                                <td *ngFor = "let do of data.arm[2], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                              
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+
+
+                              <tr>
+                                <th scope="row">THIRD</th>
+                                <td *ngFor = "let do of data.arm[3], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                               
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">FOURTH</th>
+                                <td *ngFor = "let do of data.arm[4], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                                
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+                              <tr>
+                                <th scope="row">FIFTH</th>
+                                <td *ngFor = "let do of data.arm[5], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                                
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">SIXTH</th>
+                                <td *ngFor = "let do of data.arm[6], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                               
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">SEVENTH</th>
+                                <td *ngFor = "let do of data.arm[7], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                                
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">EIGHTH</th>
+                                <td *ngFor = "let do of data.arm[8], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                               
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">NINETH</th>
+                                <td *ngFor = "let do of data.arm[9], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                                
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">TENTH</th>
+                                <td *ngFor = "let do of data.arm[10], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                               
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">ELEVENTH</th>
+                                <td *ngFor = "let do of data.arm[11], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                               
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">TEWELTH</th>
+                                <td *ngFor = "let do of data.arm[12], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                                
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+                           
+                           
+            
+                            </tbody>
+                               
+                          </table> 
+                          
+                          <hr>
+
+                          <table class="table" *ngIf="gateway != undefined" style="text-align: center;">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">DISARM</th>
+                                <th scope="col">L1</th>
+                                <th scope="col">L2</th>
+                                <th scope="col">L3</th>
+                                <th scope="col">L4</th>
+                                <th scope="col">L5</th>
+                                <th scope="col">L6</th>
+                                <th scope="col">L7</th>
+                                <th scope="col">L8</th>
+                                <th scope="col">L9</th>
+                                <th scope="col">L10</th>
+                                <th scope="col">Action</th>
+
+
+                              
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">FIRST</th>
+                                <!--  *ngFor = "let do of data.arm[1], let io= index" -->
+                                <td *ngFor = "let do of data.disarm[1], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                              
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+
+                              <tr>
+                                <th scope="row">SECOND</th>
+                                <td *ngFor = "let do of data.disarm[2], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                              
+                                <td>
+                                    <mat-checkbox class="example-margin">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+
+
+                              <tr>
+                                <th scope="row">THIRD</th>
+                                <td *ngFor = "let do of data.disarm[3], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                               
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">FOURTH</th>
+                                <td *ngFor = "let do of data.disarm[4], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                                
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+                              <tr>
+                                <th scope="row">FIFTH</th>
+                                <td *ngFor = "let do of data.disarm[5], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                                
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">SIXTH</th>
+                                <td *ngFor = "let do of data.disarm[6], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                               
+                                <td>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin" >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">SEVENTH</th>
+                                <td *ngFor = "let do of data.disarm[7], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                                
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">EIGHTH</th>
+                                <td *ngFor = "let do of data.disarm[8], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                               
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">NINETH</th>
+                                <td *ngFor = "let do of data.disarm[9], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                                
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">TENTH</th>
+                                <td *ngFor = "let do of data.disarm[10], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                               
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">ELEVENTH</th>
+                                <td *ngFor = "let do of data.disarm[11], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                               
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">TEWELTH</th>
+                                <td *ngFor = "let do of data.disarm[12], let io= index">
+                                    <mat-checkbox class="example-margin" [checked]= "do" >  </mat-checkbox>
+                                </td>
+                                
+                                <td>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  >  </mat-checkbox>
+                                </td>
+                              </tr>
+                           
+                           
+            
+                            </tbody>
+                               
+                          </table> 
+
+
+                        
+
+
+                          <!-- <button type="button" class="btn btn-primary" (click)="onsubmit()">Submit</button> -->
+
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+         </div>
+      
+           
+       
+           
+       
+    </div>
+    
+  </div>
+  
+  
+  
+  

@@ -1,0 +1,1273 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+       
+            <h3>Edit SMS Settings</h3>
+            <hr>
+         </div>
+  
+         <div class="form_holder">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="font-size: 80%;">
+                        <br>
+                        <p>      
+                            <mat-form-field appearance="outline" id="gateway">
+                              <mat-label>Select Gateway</mat-label>
+                              <mat-select placeholder="gateway" [(ngModel)]="gateway" name="gateway"> 
+                                <mat-option *ngFor="let g of gateways" value="{{g.gateway_id}}"  >{{g.gateway.name}}</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                        </p>
+                        <hr>
+                        <br>
+
+                        <table class="table" *ngIf="gateway != undefined" style="text-align: center;">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">L1</th>
+                                <th scope="col">L2</th>
+                                <th scope="col">L3</th>
+                                <th scope="col">L4</th>
+                                <th scope="col">L5</th>
+                                <th scope="col">L6</th>
+                                <th scope="col">L7</th>
+                                <th scope="col">L8</th>
+                                <th scope="col">L9</th>
+                                <th scope="col">L10</th>
+                                <th scope="col">Action</th>
+
+
+                              
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">ARM By Platform</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_platform1"  (change)="onclick('arm_by_platform',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_platform2"   (change)="onclick('arm_by_platform',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_platform3" (change)="onclick('arm_by_platform',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_platform4"  (change)="onclick('arm_by_platform',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_platform5" (change)="onclick('arm_by_platform',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="arm_by_platform6" (change)="onclick('arm_by_platform',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_platform7" (change)="onclick('arm_by_platform',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="arm_by_platform8" (change)="onclick('arm_by_platform',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_platform9"  (change)="onclick('arm_by_platform',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="arm_by_platform10" (change)="onclick('arm_by_platform',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_platform',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_platform',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+                              <tr>
+                                <th scope="row">DISARM By Platform</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_platform1" (change)="onclick('disarm_by_platform',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_platform2"  (change)="onclick('disarm_by_platform',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_platform3" (change)="onclick('disarm_by_platform',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_platform4"  (change)="onclick('disarm_by_platform',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_platform5" (change)="onclick('disarm_by_platform',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_platform6"  (change)="onclick('disarm_by_platform',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_platform7" (change)="onclick('disarm_by_platform',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_platform8"  (change)="onclick('disarm_by_platform',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_platform9" (change)="onclick('disarm_by_platform',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_platform10"  (change)="onclick('disarm_by_platform',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_platform',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_platform',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">ARM By Keypad</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_keypad1" (change)="onclick('arm_by_keypad',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_keypad2"  (change)="onclick('arm_by_keypad',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_keypad3" (change)="onclick('arm_by_keypad',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="arm_by_keypad4" (change)="onclick('arm_by_keypad',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_keypad5" (change)="onclick('arm_by_keypad',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_keypad6"  (change)="onclick('arm_by_keypad',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_keypad7" (change)="onclick('arm_by_keypad',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="arm_by_keypad8" (change)="onclick('arm_by_keypad',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_keypad9" (change)="onclick('arm_by_keypad',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="arm_by_keypad10"  (change)="onclick('arm_by_keypad',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_keypad',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('arm_by_keypad',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">DISARM By Keypad</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_keypad1" (change)="onclick('disarm_by_keypad',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarm_by_keypad2" (change)="onclick('disarm_by_keypad',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_keypad3" (change)="onclick('disarm_by_keypad',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarm_by_keypad4" (change)="onclick('disarm_by_keypad',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_keypad5" (change)="onclick('disarm_by_keypad',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarm_by_keypad6" (change)="onclick('disarm_by_keypad',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarm_by_keypad7" (change)="onclick('disarm_by_keypad',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarm_by_keypad8" (change)="onclick('disarm_by_keypad',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_keypad9"  (change)="onclick('disarm_by_keypad',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarm_by_keypad10"  (change)="onclick('disarm_by_keypad',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_keypad',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('disarm_by_keypad',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">OFFLINE</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="offline1" (change)="onclick('offline',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="offline2"  (change)="onclick('offline',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="offline3" (change)="onclick('offline',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="offline4" (change)="onclick('offline',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="offline5" (change)="onclick('offline',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="offline6"  (change)="onclick('offline',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="offline7"  (change)="onclick('offline',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="offline8"  (change)="onclick('offline',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="offline9" (change)="onclick('offline',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="offline10"  (change)="onclick('offline',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('offline',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('offline',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">ONLINE</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="online1" (change)="onclick('online',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="online2" (change)="onclick('online',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="online3" (change)="onclick('online',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="online4"  (change)="onclick('online',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="online5" (change)="onclick('online',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="online6"  (change)="onclick('online',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="online7" (change)="onclick('online',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="online8"  (change)="onclick('online',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="online9" (change)="onclick('online',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="online10"  (change)="onclick('online',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('online',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="onclick('online',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+                            </tbody>
+                               
+                          </table>
+
+                         <hr>
+
+                         <table class="table" *ngIf="gateway != undefined" style="text-align: center;">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">ARM</th>
+                                <th scope="col">L1</th>
+                                <th scope="col">L2</th>
+                                <th scope="col">L3</th>
+                                <th scope="col">L4</th>
+                                <th scope="col">L5</th>
+                                <th scope="col">L6</th>
+                                <th scope="col">L7</th>
+                                <th scope="col">L8</th>
+                                <th scope="col">L9</th>
+                                <th scope="col">L10</th>
+                                <th scope="col">Action</th>
+
+
+                              
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">FIRST</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[1][0]" (change)="arm('first',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[1][1]" (change)="arm('first',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[1][2]" (change)="arm('first',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[1][3]"  (change)="arm('first',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[1][4]" (change)="arm('first',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[1][5]"  (change)="arm('first',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[1][6]"  (change)="arm('first',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[1][7]"  (change)="arm('first',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[1][8]" (change)="arm('first',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[1][9]"  (change)="arm('first',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('first',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('first',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+
+                              <tr>
+                                <th scope="row">SECOND</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[2][0]" (change)="arm('second',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[2][1]"   (change)="arm('second',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[2][2]"  (change)="arm('second',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[2][3]"  (change)="arm('second',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[2][4]"  (change)="arm('second',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[2][5]"   (change)="arm('second',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[2][6]"  (change)="arm('second',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[2][7]"   (change)="arm('second',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[2][8]"  (change)="arm('second',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[2][9]"  (change)="arm('second',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('second',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('second',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+
+
+                              <tr>
+                                <th scope="row">THIRD</th>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[3][0]" (change)="arm('third',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   [(ngModel)]="armda[3][1]" (change)="arm('third',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[3][2]" (change)="arm('third',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[3][3]"  (change)="arm('third',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[3][4]"  (change)="arm('third',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[3][5]"   (change)="arm('third',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[3][6]"  (change)="arm('third',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[3][7]"   (change)="arm('third',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[3][8]"   (change)="arm('third',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[3][9]"   (change)="arm('third',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('third',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('third',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">FOURTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[4][0]" (change)="arm('fourth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[4][1]" (change)="arm('fourth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[4][2]"  (change)="arm('fourth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[4][3]" (change)="arm('fourth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[4][4]" (change)="arm('fourth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[4][5]" (change)="arm('fourth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[4][6]" (change)="arm('fourth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[4][7]"  (change)="arm('fourth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[4][8]" (change)="arm('fourth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[4][9]" (change)="arm('fourth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fourth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fourth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+                              <tr>
+                                <th scope="row">FIFTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[5][0]"  (change)="arm('fifth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[5][1]"   (change)="arm('fifth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[5][2]"  (change)="arm('fifth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[5][3]"  (change)="arm('fifth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[5][4]" (change)="arm('fifth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[5][5]"  (change)="arm('fifth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[5][6]" (change)="arm('fifth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[5][7]" (change)="arm('fifth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[5][8]" (change)="arm('fifth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[5][9]"  (change)="arm('fifth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fifth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fifth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">SIXTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[6][0]" (change)="arm('sixth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[6][1]"  (change)="arm('sixth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[6][2]" (change)="arm('sixth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[6][3]" (change)="arm('sixth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[6][4]" (change)="arm('sixth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[6][5]" (change)="arm('sixth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[6][6]" (change)="arm('sixth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[6][7]"  (change)="arm('sixth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[6][8]" (change)="arm('sixth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[6][9]"  (change)="arm('sixth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('sixth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('sixth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">SEVENTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[7][0]" (change)="arm('seventh',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[7][1]"  (change)="arm('seventh',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[7][2]" (change)="arm('seventh',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[7][3]" (change)="arm('seventh',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[7][4]" (change)="arm('seventh',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[7][5]" (change)="arm('seventh',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[7][6]" (change)="arm('seventh',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[7][7]"  (change)="arm('seventh',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[7][8]" (change)="arm('seventh',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[7][9]"  (change)="arm('seventh',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('seventh',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('seventh',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">EIGHTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[8][0]" (change)="arm('eighth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[8][1]"  (change)="arm('eighth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[8][2]" (change)="arm('eighth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[8][3]"  (change)="arm('eighth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[8][4]" (change)="arm('eighth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[8][5]"  (change)="arm('eighth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[8][6]" (change)="arm('eighth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[8][7]"  (change)="arm('eighth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[8][8]" (change)="arm('eighth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[8][9]"  (change)="arm('eighth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eighth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eighth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">NINETH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[9][0]" (change)="arm('nineth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[9][1]"  (change)="arm('nineth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[9][2]" (change)="arm('nineth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[9][3]"  (change)="arm('nineth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[9][4]" (change)="arm('nineth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[9][5]"  (change)="arm('nineth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[9][6]" (change)="arm('nineth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[9][7]"  (change)="arm('nineth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[9][8]" (change)="arm('nineth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[9][9]"  (change)="arm('nineth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('nineth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('nineth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">TENTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[10][0]" (change)="arm('tenth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[10][1]"  (change)="arm('tenth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[10][2]" (change)="arm('tenth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[10][3]"  (change)="arm('tenth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[10][4]" (change)="arm('tenth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[10][5]"  (change)="arm('tenth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[10][6]" (change)="arm('tenth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[10][7]"  (change)="arm('tenth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[10][8]" (change)="arm('tenth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[10][9]" (change)="arm('tenth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tenth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tenth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">ELEVENTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[11][0]" (change)="arm('eleventh',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[11][1]"  (change)="arm('eleventh',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[11][2]" (change)="arm('eleventh',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[11][3]"  (change)="arm('eleventh',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[11][4]" (change)="arm('eleventh',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[11][5]"  (change)="arm('eleventh',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[11][6]" (change)="arm('eleventh',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[11][7]"  (change)="arm('eleventh',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[11][8]" (change)="arm('eleventh',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[11][9]" (change)="arm('eleventh',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eleventh',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eleventh',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">TEWELTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[12][0]" (change)="arm('tewelth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="armda[12][1]" (change)="arm('tewelth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[12][2]" (change)="arm('tewelth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[12][3]"  (change)="arm('tewelth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[12][4]" (change)="arm('tewelth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[12][5]"  (change)="arm('tewelth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[12][6]" (change)="arm('tewelth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[12][7]"  (change)="arm('tewelth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[12][8]" (change)="arm('tewelth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="armda[12][9]"  (change)="arm('tewelth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tewelth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tewelth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+                           
+                           
+            
+                            </tbody>
+                               
+                          </table>
+                          
+                          <hr>
+
+
+                          <table class="table" *ngIf="gateway != undefined" style="text-align: center;">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">DISARM</th>
+                                <th scope="col">L1</th>
+                                <th scope="col">L2</th>
+                                <th scope="col">L3</th>
+                                <th scope="col">L4</th>
+                                <th scope="col">L5</th>
+                                <th scope="col">L6</th>
+                                <th scope="col">L7</th>
+                                <th scope="col">L8</th>
+                                <th scope="col">L9</th>
+                                <th scope="col">L10</th>
+                                <th scope="col">Action</th>
+
+
+                              
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">FIRST</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[1][0]" (change)="disarm('first',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[1][1]" (change)="disarm('first',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[1][2]" (change)="disarm('first',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[1][3]"  (change)="disarm('first',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[1][4]" (change)="disarm('first',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[1][5]"  (change)="disarm('first',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[1][6]"  (change)="disarm('first',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[1][7]"  (change)="disarm('first',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[1][8]" (change)="disarm('first',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[1][9]"  (change)="disarm('first',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('first',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('first',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+
+                              <tr>
+                                <th scope="row">SECOND</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[2][0]" (change)="disarm('second',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[2][1]"   (change)="disarm('second',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[2][2]"  (change)="disarm('second',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[2][3]"  (change)="disarm('second',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[2][4]"  (change)="disarm('second',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[2][5]"   (change)="disarm('second',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[2][6]"  (change)="disarm('second',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[2][7]"   (change)="disarm('second',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[2][8]"  (change)="disarm('second',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[2][9]"  (change)="disarm('second',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('second',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('second',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+
+
+                              <tr>
+                                <th scope="row">THIRD</th>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[3][0]" (change)="disarm('third',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"   [(ngModel)]="disarmda[3][1]" (change)="disarm('third',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[3][2]" (change)="disarm('third',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[3][3]"  (change)="disarm('third',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[3][4]"  (change)="disarm('third',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[3][5]"   (change)="disarm('third',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[3][6]"  (change)="disarm('third',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[3][7]"   (change)="disarm('third',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[3][8]"   (change)="disarm('third',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[3][9]"   (change)="disarm('third',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('third',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="disarm('third',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">FOURTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[4][0]" (change)="disarm('fourth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[4][1]" (change)="disarm('fourth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[4][2]"  (change)="disarm('fourth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[4][3]" (change)="disarm('fourth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[4][4]" (change)="disarm('fourth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[4][5]" (change)="disarm('fourth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[4][6]" (change)="disarm('fourth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[4][7]"  (change)="disarm('fourth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[4][8]" (change)="disarm('fourth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[4][9]" (change)="disarm('fourth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fourth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fourth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+            
+                              <tr>
+                                <th scope="row">FIFTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[5][0]"  (change)="disarm('fifth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[5][1]"   (change)="disarm('fifth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[5][2]"  (change)="disarm('fifth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[5][3]"  (change)="disarm('fifth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[5][4]" (change)="disarm('fifth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[5][5]"  (change)="disarm('fifth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[5][6]" (change)="disarm('fifth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[5][7]" (change)="disarm('fifth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[5][8]" (change)="disarm('fifth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[5][9]"  (change)="disarm('fifth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fifth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('fifth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">SIXTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[6][0]" (change)="disarm('sixth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[6][1]"  (change)="disarm('sixth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[6][2]" (change)="disarm('sixth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[6][3]" (change)="disarm('sixth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[6][4]" (change)="disarm('sixth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[6][5]" (change)="disarm('sixth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[6][6]" (change)="disarm('sixth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[6][7]"  (change)="disarm('sixth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[6][8]" (change)="disarm('sixth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[6][9]"  (change)="disarm('sixth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('sixth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('sixth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">SEVENTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[7][0]" (change)="disarm('seventh',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[7][1]"  (change)="disarm('seventh',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[7][2]" (change)="disarm('seventh',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[7][3]" (change)="disarm('seventh',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[7][4]" (change)="disarm('seventh',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[7][5]" (change)="disarm('seventh',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[7][6]" (change)="disarm('seventh',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[7][7]"  (change)="disarm('seventh',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[7][8]" (change)="disarm('seventh',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[7][9]"  (change)="disarm('seventh',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('seventh',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('seventh',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">EIGHTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[8][0]" (change)="disarm('eighth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[8][1]"  (change)="disarm('eighth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[8][2]" (change)="disarm('eighth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[8][3]"  (change)="disarm('eighth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[8][4]" (change)="disarm('eighth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[8][5]"  (change)="disarm('eighth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[8][6]" (change)="disarm('eighth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[8][7]"  (change)="disarm('eighth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[8][8]" (change)="disarm('eighth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[8][9]"  (change)="disarm('eighth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eighth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eighth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">NINETH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[9][0]" (change)="disarm('nineth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[9][1]"  (change)="disarm('nineth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[9][2]" (change)="disarm('nineth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[9][3]"  (change)="disarm('nineth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[9][4]" (change)="disarm('nineth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[9][5]"  (change)="disarm('nineth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[9][6]" (change)="disarm('nineth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[9][7]"  (change)="disarm('nineth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[9][8]" (change)="disarm('nineth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[9][9]"  (change)="disarm('nineth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('nineth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('nineth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">TENTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[10][0]" (change)="disarm('tenth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[10][1]"  (change)="disarm('tenth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[10][2]" (change)="disarm('tenth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[10][3]"  (change)="disarm('tenth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[10][4]" (change)="disarm('tenth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[10][5]"  (change)="disarm('tenth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[10][6]" (change)="disarm('tenth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[10][7]"  (change)="disarm('tenth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[10][8]" (change)="disarm('tenth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[10][9]" (change)="disarm('tenth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tenth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tenth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">ELEVENTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[11][0]" (change)="disarm('eleventh',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[11][1]"  (change)="disarm('eleventh',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[11][2]" (change)="disarm('eleventh',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[11][3]"  (change)="disarm('eleventh',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[11][4]" (change)="disarm('eleventh',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[11][5]"  (change)="disarm('eleventh',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[11][6]" (change)="disarm('eleventh',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[11][7]"  (change)="disarm('eleventh',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[11][8]" (change)="disarm('eleventh',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[11][9]" (change)="disarm('eleventh',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eleventh',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('eleventh',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <th scope="row">TEWELTH</th>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[12][0]" (change)="disarm('tewelth',1,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  [(ngModel)]="disarmda[12][1]" (change)="disarm('tewelth',2,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[12][2]" (change)="disarm('tewelth',3,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[12][3]"  (change)="disarm('tewelth',4,$event.checked)">  </mat-checkbox>
+                                </td> 
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[12][4]" (change)="disarm('tewelth',5,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[12][5]"  (change)="disarm('tewelth',6,$event.checked)">  </mat-checkbox>
+                                </td>
+                                 <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[12][6]" (change)="disarm('tewelth',7,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[12][7]"  (change)="disarm('tewelth',8,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[12][8]" (change)="disarm('tewelth',9,$event.checked)" >  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin" [(ngModel)]="disarmda[12][9]"  (change)="disarm('tewelth',10,$event.checked)">  </mat-checkbox>
+                                </td>
+                                <td>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tewelth',11,$event.checked)">  </mat-checkbox>
+                                    <mat-checkbox class="example-margin"  (change)="arm('tewelth',12,$event.checked)">  </mat-checkbox>
+                                </td>
+                              </tr>
+                           
+                           
+            
+                            </tbody>
+                               
+                          </table>
+
+                          <button type="button" class="btn btn-primary" (click)="onsubmit()">Submit</button>
+
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+         </div>
+      
+           
+       
+           
+       
+    </div>
+    
+  </div>
+  
+  
+  
+  

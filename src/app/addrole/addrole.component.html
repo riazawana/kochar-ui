@@ -1,0 +1,127 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+       
+            <h3>Role Information</h3>
+            <hr>
+         </div>
+  
+         <div class="form_holder">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="font-size: 80%;">
+                        <br>
+                       
+                   
+                        <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Role Name</mat-label>
+                              <input matInput placeholder="Role Name" [(ngModel)]="name" name="name" [disabled]="disable">
+                              <mat-hint>Role Name</mat-hint>
+                            </mat-form-field>
+                          </p>
+
+                          <p *ngIf="disable == true">
+                            Please create fetures first <span (click)="addfetures()" style="color: cornflowerblue;" >Add features</span>
+                          </p>
+
+                          <div class="form_holder">
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-8" style="font-size: 80%;">
+                                      
+                                <div class="row">
+                                  <div class="col-sm-6">
+                                    <p>
+                                      <mat-form-field appearance="outline">
+                                          <mat-label>Module</mat-label>
+                                          <mat-select placeholder="Module" [(ngModel)]="module_name" name="module_name" >
+                                              <mat-option *ngFor="let m of modules" value="{{m.name}}" (click)="getsubmodulebyname(m.name)">{{m.name}}</mat-option>
+                                          </mat-select>
+                                        <mat-hint>Module</mat-hint>
+                                      </mat-form-field>
+                                    </p>
+                
+                                 
+                                  </div>
+                                  
+                                  <div class="col-sm-6">
+                                    <p>
+                                      <mat-form-field appearance="outline">
+                                          <mat-label>Sub Module</mat-label>
+                                          <mat-select placeholder="Module" [(ngModel)]="submodule_name" name="submodule_name" multiple >
+                                              <mat-option *ngFor="let m of submodules" value="{{m.name}}">{{m.name}}</mat-option>
+                                          </mat-select>
+                                        <mat-hint>Module</mat-hint>
+                                      </mat-form-field>
+                                    </p>
+                
+                                
+                                  </div>
+                                
+                
+                
+                                </div>
+
+                                <div class="row">
+                          <button type="button" class="btn btn-danger" (click)="addmodule()">Add module</button>
+                           
+                        </div>
+                                     
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                         </div>
+
+                         <div class="row" *ngFor="let da of mapping;let i = index;">
+                          <div class="col-sm-4">
+                            {{da.modulename}}
+                          </div>
+                          <div class="col-sm-4">
+                            <div *ngIf="da.submodulemapping == true">
+                              <div class="row" *ngFor="let sa of da.submodulename">
+                                   {{sa.submodule_name}}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <p (click)="delete(i)">delete</p>
+                          </div>
+                         </div>
+
+                            <p *ngFor="let da of features;">
+                              <mat-label>{{da.name}}</mat-label>
+                            
+                              <mat-checkbox *ngIf="da.type != 'button'" class="example-margin" name="Add"   (change)="check('add',$event.checked,da.name,da.type)">Add </mat-checkbox>
+                              <mat-checkbox *ngIf="da.type != 'button'" class="example-margin" name="View" (change)="check('view',$event.checked,da.name,da.type)">View </mat-checkbox>
+                              <mat-checkbox *ngIf="da.type != 'button'" class="example-margin" name="Edit" (change)="check('edit',$event.checked,da.name,da.type)">Edit </mat-checkbox>
+                              <mat-checkbox *ngIf="da.type != 'button'" class="example-margin" name="Delete" (change)="check('delete',$event.checked,da.name,da.type)">Delete </mat-checkbox>
+                              <mat-checkbox  *ngIf="da.type == 'button'" class="example-margin" name="Action" (change)="check('action',$event.checked,da.name,da.type)">Action </mat-checkbox>
+
+                            </p>
+
+                         
+            
+                    
+                          
+                          <button type="button" class="btn btn-primary" (click) = "onsubmit()" [disabled]="name == undefined">Submit</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+                          <button type="button" class="btn btn-danger">Cancel</button>
+                     
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+         </div>
+      
+           
+       
+           
+       
+    </div>
+    
+  </div>
+  
+  
+  
+  

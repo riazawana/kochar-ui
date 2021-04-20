@@ -1,0 +1,139 @@
+
+<div class="row" >
+    <div class="containt">
+        <div class="sub-heading">
+       
+            <h3>Assign User</h3>
+            <hr>
+         </div>
+  
+         <div class="form_holder">
+            <div class="row" style="margin: 0%;">
+                <div class="col-sm-12" style="font-size: 80%;">
+                        <br>
+                        <label>Select Location</label>
+                        <p>
+                        
+                            <mat-form-field appearance="outline" id="hub">
+                              <mat-label>Location</mat-label>
+                              <mat-select placeholder="location_id" [(ngModel)]="location_id"  name="location_id">
+                              
+                                <mat-option *ngFor="let l of locations" value="{{l._id}},{{l.name}},{{l.client}}" (click)="gethub(l._id)" >{{l.name}}</mat-option>
+
+                              </mat-select>
+                            </mat-form-field>
+                          </p>
+                          <hr>
+
+                          <p>
+                        
+                            <mat-form-field appearance="outline" id="hub">
+                              <mat-label>Hub*</mat-label>
+                              <mat-select placeholder="hub" [(ngModel)]="hub" name="hub">
+                              
+                                <mat-option *ngFor="let h of hub_list" value="{{h.name}},{{h.mac_id}},{{h._id}}" >{{h.name}}</mat-option>
+
+                              </mat-select>
+                            </mat-form-field>
+                          </p>
+                          <hr>
+                          <label>Assign User</label>
+                          <hr>
+
+                      <div class="row">
+                        <div class="col-sm-8">
+                            <p>
+                                <mat-form-field appearance="outline" id="level">
+                                  <mat-label>Level*</mat-label>
+                                  <mat-select placeholder="level" [(ngModel)]="level" name="level">
+                                    <mat-option *ngFor="let l of level_list" value="{{l}}"  >{{l}}</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </p>
+    
+                              <p>
+                                <mat-form-field appearance="outline" id="notification_category">
+                                  <mat-label>Notification Category*</mat-label>
+                                  <mat-select placeholder="notification cat" [(ngModel)]="notification_category" name="notification_category" multiple>
+                                    <mat-option value="Health Check"  >Health Check</mat-option>
+                                    <mat-option value="Risk Assesment"  >Risk Assesment</mat-option>
+                                    
+                                  </mat-select>
+                                </mat-form-field>
+                              </p>
+                              
+                            
+
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>User Name</mat-label>
+                                  <input matInput [(ngModel)]="name" name="name" placeholder="Number">
+                                  <mat-hint>User Name</mat-hint>
+                                </mat-form-field>
+                              </p>
+
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Phone</mat-label>
+                                  <input matInput [(ngModel)]="phone" name="phone" placeholder="Number">
+                                  <mat-hint>Phone</mat-hint>
+                                </mat-form-field>
+                              </p>
+
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Designation</mat-label>
+                                  <input matInput [(ngModel)]="designation" name="designation" placeholder="Developer">
+                                  <mat-hint>Designation</mat-hint>
+                                </mat-form-field>
+                              </p>
+                
+                
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Email</mat-label>
+                                  <input matInput [(ngModel)]="email" name="email" placeholder="Email">
+                                  <mat-hint>User Email</mat-hint>
+                                </mat-form-field>
+                              </p>
+                
+                
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>TAT</mat-label>
+                                  <input matInput [(ngModel)]="tat" name="tat" placeholder="tat">
+                                  <mat-hint>TAT</mat-hint>
+                                </mat-form-field>
+                              </p>
+    
+                    
+    
+                        </div>
+                      </div>
+
+                      <div style="width: 100%;text-align: center;">
+                        <button type="button" class="btn btn-danger" (click)="add()">add</button>
+                      </div>
+                         
+
+                          <button type="button" class="btn btn-primary" (click)="onsubmit()">Submit</button>
+                          &nbsp;&nbsp;&nbsp;&nbsp;
+                          <button type="button" class="btn btn-danger">Cancel</button>
+                          
+                     
+                     
+                </div>
+            </div>
+         </div>
+      
+           
+       
+           
+       
+    </div>
+    
+  </div>
+  
+  
+  
+  

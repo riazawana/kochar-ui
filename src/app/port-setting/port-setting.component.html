@@ -1,0 +1,129 @@
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+            <h3>Port Settings</h3>
+            <hr>
+         </div>
+
+         <div class="form_holder">
+          
+            <div class="row">
+               
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="font-size: 80%;">
+                        <br>
+                       
+                   
+                       
+
+                         
+            
+                          <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Port Number</mat-label>
+                              <input matInput [(ngModel)]="port_no" name="port_no" placeholder="Number">
+                              <mat-hint>Port Number</mat-hint>
+                            </mat-form-field>
+                          </p>
+
+                          <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Name</mat-label>
+                              <input matInput [(ngModel)]="name" name="name" placeholder="Name">
+                              <mat-hint>Name</mat-hint>
+                            </mat-form-field>
+                          </p>
+
+                          <p>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Sensor Type</mat-label>
+                                <mat-select placeholder="sensor_type" [(ngModel)]="sensor_type" name="sensor_type">
+                                  <mat-option  value="panic sensor" >Panic Sensor</mat-option>
+                                  <mat-option  value="pri sensor" >PRI Sensor</mat-option>
+                                  <mat-option  value="smoke sensor" >Smoke Sensor</mat-option>
+                                  <mat-option  value="shutter sensor" >Shutter Contact Sensor</mat-option>
+                                  <mat-option  value="magnetic sensor" >Magnetic Contact Sensor</mat-option>
+                                  <mat-option  value="glassbreak sensor" >Glassbreak Sensor</mat-option>
+                                  <mat-option  value="thermal sensor" >Thermal Sensor</mat-option>
+                                  <mat-option  value="seismic sensor" >Seismic Sensor</mat-option>
+                                  <mat-option  value="vibration sensor" >Vibration Sensor</mat-option>
+                                </mat-select>
+                              <mat-hint>Sensor Type</mat-hint>
+                            </mat-form-field>
+                          </p>
+            
+            
+                          <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Room</mat-label>
+                              <input matInput [(ngModel)]="room" name="room" placeholder="room">
+                              <mat-hint>Room</mat-hint>
+                            </mat-form-field>
+                          </p>
+            
+                          <p>
+                            <mat-label>Default</mat-label>
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            <br>
+                            <mat-radio-group
+                            aria-labelledby="example-radio-group-label"
+                            class="example-radio-group"
+                            [(ngModel)]="default">
+                            <mat-radio-button class="example-radio-button"  [value]="0">
+                            0 (Non - Triggered)
+                            </mat-radio-button>
+<br>
+                            <mat-radio-button class="example-radio-button"  [value]="1">
+                                1 (Triggered)
+                                </mat-radio-button>
+                          </mat-radio-group>
+                          </p>
+
+
+                          <p>
+                            <mat-label>Alarm Type</mat-label>
+                             &nbsp;
+                             &nbsp;
+                             &nbsp;
+                             &nbsp;
+                             <br>
+                            <mat-radio-group
+                            aria-labelledby="example-radio-group-label"
+                            class="example-radio-group"
+                            [(ngModel)]="alarm">
+                            <mat-radio-button class="example-radio-button"  [value]="0">
+                            0 (NO - ALARM IN ARM OR DISARM MODE)
+                            </mat-radio-button>
+                            <br>
+
+                            <mat-radio-button class="example-radio-button"  [value]="1">
+                                1 (ALARM IN ARM MODE)
+                                </mat-radio-button>
+                                <br>
+
+                                <mat-radio-button class="example-radio-button"  [value]="2">
+                                    2 (ALARM IN ARM & DISARM MODE)
+                                    </mat-radio-button>
+                          </mat-radio-group>
+                          </p>
+                  
+                         
+
+                          <button type="button" class="btn btn-primary" (click)="onsubmit()">Submit</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+                          <button type="button" class="btn btn-danger">Cancel</button>
+                     
+                </div>
+                <div class="col-sm-2"></div>
+
+            </div>
+            
+    </div>
+    </div>
+    
+</div>
+
+

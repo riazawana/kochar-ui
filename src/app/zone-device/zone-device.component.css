@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+
+
+.containt{
+  margin: 1%;
+  width: 100%;
+}
+
+.sub-heading{
+  color:#022656;
+}
+
+.main{
+  background: white;
+}

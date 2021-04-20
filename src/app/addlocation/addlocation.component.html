@@ -1,0 +1,258 @@
+
+<div class="row">
+    <div class="containt">
+        <div class="sub-heading">
+         
+            <h3>Add Connected Wired Controller</h3>
+            <hr>
+         </div>
+  
+        <div class="main">
+            
+            <mat-tab-group dynamicHeight [selectedIndex]="selectedIndex" style="font-size: 85%;">
+              
+
+                <mat-tab label="Wired Controller"  >
+                  <div class="example-large-box mat-elevation-z4">
+                       <div class="row" id="row">
+                        <div class="col-sm-12">
+
+                            <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Wired Controller Type</mat-label>
+                                    <mat-select placeholder="Type" [(ngModel)]="w_c_t" name="w_c_t">
+                                      <mat-option  value="IN-12" >IN-12</mat-option>
+                                      <mat-option  value="IN-14" >IN-14</mat-option>
+                                    </mat-select>
+                                  <mat-hint>Wired Controller Type</mat-hint>
+                                </mat-form-field>
+                              </p>
+
+                            <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Wired Controller Name</mat-label>
+                                  <input matInput [(ngModel)]="w_c_n" name="w_c_n" placeholder="Controller Name">
+                                  <mat-hint>Wired Controller Name</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Wired Controller Mac Address</mat-label>
+                                  <input matInput [(ngModel)]="w_c_m_a" name="w_c_m_a" placeholder="(00:00:00:00:00:00)">
+                                  <mat-hint>Wired Controller Mac Address</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>GL Mac Address</mat-label>
+                                  <input matInput [(ngModel)]="gl_mac" name="gl_mac" placeholder="(00:00:00:00:00:00)">
+                                  <mat-hint>GL Mac Address</mat-hint>
+                                </mat-form-field>
+                              </p>
+        
+                              <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>GL Number</mat-label>
+                                  <input matInput [(ngModel)]="gl_num" name="gl_num" placeholder="0000000000">
+                                  <mat-hint>GL Number</mat-hint>
+                                </mat-form-field>
+                              </p>
+                              
+                        </div>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn btn-primary" (click)="submot_iotgateway()" style="float: right;">Next</button>
+                  <!-- <button type="button" class="btn btn-primary" (click)="previousStep()" style="float: right;">Previous</button> -->
+
+                </mat-tab>
+
+                <mat-tab label="Select Template" >
+                  <div class="example-large-box mat-elevation-z4">
+                    <div class="row">
+                     
+
+                      <div class="col-sm-12">
+                          <mat-radio-group
+                            aria-labelledby="example-radio-group-label"
+                            class="example-radio-group"
+                            [(ngModel)]="sel_temp">
+                            <mat-radio-button class="example-radio-button" *ngFor="let t of alltemplate" [value]="t._id">
+                             {{t.name}}
+                            </mat-radio-button>
+                          </mat-radio-group>
+
+                      </div>
+
+                     
+                     
+                  </div>
+                  </div>
+
+                    <button type="button" class="btn btn-primary" (click)="submit_seltemp(sel_temp)" style="float: right;">Next</button>
+                    <button type="button" class="btn btn-primary" (click)="previousStep(1)" style="float: right;">Previous</button>
+  
+                  </mat-tab>
+
+                  <mat-tab label="Port Setting"  >
+                    <div class="example-large-box mat-elevation-z4" *ngFor="let s of sensordata">
+                      <div class="row">
+                        <div class="col-sm-1">
+                          <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Port</mat-label>
+                              <input matInput [(ngModel)]="s.port_number"  name="port" placeholder="0" disabled>
+                              <mat-hint>Port</mat-hint>
+                            </mat-form-field>
+                          </p>
+                        </div>
+
+                        <div class="col-sm-2">
+                          <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Sensor Name</mat-label>
+                              <input matInput [(ngModel)]="s.sensor_name" name="sname" placeholder="Sensor Name">
+                              <mat-hint>Sensor Name</mat-hint>
+                            </mat-form-field>
+                          </p>
+                        </div>
+
+                        <div class="col-sm-2">
+
+                          <p>
+                              <mat-form-field appearance="outline">
+                                  <mat-label>Select Sensor</mat-label>
+                                  <mat-select placeholder="Type" [(ngModel)]="s.sensor_type" name="sel_sensor">
+                                    <mat-option  value="panic sensor" >Panic Sensor</mat-option>
+                                    <mat-option  value="pri sensor" >PRI Sensor</mat-option>
+                                    <mat-option  value="smoke sensor" >Smoke Sensor</mat-option>
+                                    <mat-option  value="shutter sensor" >Shutter Contact Sensor</mat-option>
+                                    <mat-option  value="magnetic sensor" >Magnetic Contact Sensor</mat-option>
+                                    <mat-option  value="glassbreak sensor" >Glassbreak Sensor</mat-option>
+                                    <mat-option  value="thermal sensor" >Thermal Sensor</mat-option>
+                                    <mat-option  value="seismic sensor" >Seismic Sensor</mat-option>
+                                    <mat-option  value="vibration sensor" >Vibration Sensor</mat-option>
+
+                                  </mat-select>
+                                <mat-hint>Select Sensor</mat-hint>
+                              </mat-form-field>
+                            </p>
+
+                      </div>
+
+
+                        <div class="col-sm-2">
+                          <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Room Name</mat-label>
+                              <input matInput [(ngModel)]="s.room_name" name="room" placeholder="Room Name">
+                              <mat-hint>Room Name</mat-hint>
+                            </mat-form-field>
+                          </p>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <mat-radio-group
+                              aria-labelledby="example-radio-group-label"
+                              class="example-radio-group"
+                              [(ngModel)]="s.default_state">
+                              <mat-radio-button class="example-radio-button" [value]="0">
+                                0 (Non Trigger)
+                              </mat-radio-button>
+                              <mat-radio-button class="example-radio-button" [value]="1">
+                                1 (Trigger)
+                              </mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+
+                        <div class="col-sm-2">
+                          <mat-radio-group
+                            aria-labelledby="example-radio-group-label"
+                            class="example-radio-group"
+                            [(ngModel)]="s.alarm_type">
+                            <mat-radio-button class="example-radio-button" [value]="0">
+                              0 (No Alarm In Arm Or Disarm Mode)
+                            </mat-radio-button>
+                            <mat-radio-button class="example-radio-button" [value]="1">
+                              1 (Alarm In Arm Mode)
+                            </mat-radio-button>
+
+                            <mat-radio-button class="example-radio-button" [value]="2">
+                              2 (Alarm In Arm & Disarm Mode)
+                            </mat-radio-button>
+                          </mat-radio-group>
+                      </div>
+                       
+                    </div>
+                    </div>
+
+                    <div class="example-large-box mat-elevation-z4" *ngFor="let s of tempsensor">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p>
+                            <mat-checkbox class="example-margin" [(ngModel)]="s.default_state"> Enable Temp {{s.port_number}} </mat-checkbox>
+                          </p>
+                        </div>
+
+                        <div class="col-sm-2">
+                          <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Sensor Name</mat-label>
+                              <input matInput [(ngModel)]="s.sensor_name" name="sname" placeholder="Sensor Name">
+                              <mat-hint>Sensor Name</mat-hint>
+                            </mat-form-field>
+                          </p>
+                        </div>
+
+                        <div class="col-sm-2">
+                          <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Sensor Type</mat-label>
+                              <input matInput [(ngModel)]="s.sensor_type" name="sensor_type" placeholder="Sensor Type" disabled>
+                              <mat-hint>Sensor Type</mat-hint>
+                            </mat-form-field>
+                          </p>
+                         
+
+                      </div>
+
+
+                        <div class="col-sm-2">
+                          <p>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Room Name</mat-label>
+                              <input matInput [(ngModel)]="s.room_name" name="room" placeholder="Room Name">
+                              <mat-hint>Room Name</mat-hint>
+                            </mat-form-field>
+                          </p>
+                        </div>
+
+                       
+                    </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" (click)="submit_port()" style="float: right;">Next</button>
+                    <button type="button" class="btn btn-primary" (click)="previousStep(2)" style="float: right;">Previous</button>
+  
+                  </mat-tab>
+
+              </mat-tab-group>
+
+           
+
+              
+                
+
+             
+              
+        </div>
+  
+    </div>
+    
+  </div>
+  
+  
+  
+  
